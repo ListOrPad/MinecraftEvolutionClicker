@@ -5,32 +5,29 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Game : MonoBehaviour //rename to 'Clicker'?
+public class Game : MonoBehaviour
 {
-    [SerializeField] private TMP_Text diamondsText;
-    [SerializeField] private TMP_Text dpsText;
+    [SerializeField] private TMP_Text CounterText;
+    [SerializeField] private TMP_Text IncomeText;
 
-    private BigInteger diamondCount;
+    public static BigInteger CounterValue { get; set; }
     private BigInteger clickPower;
-    private BigInteger dps;
+    private BigInteger IncomePerSecond;
 
     private void Start()
     {
-        diamondsText.text = "0 <sprite=0>";
-        dpsText.text = "1 <sprite=0> per second";
-        diamondCount = 0;
+        IncomePerSecond = 0;
+        CounterText.text = "0 <sprite=0>";
+        IncomeText.text = "1 <sprite=0> per second";
+        CounterValue = 0;
         clickPower = 1;
     }
     public void Click()
     {
-        if (Input.GetMouseButtonDown(0))
-        {
-            diamondCount += clickPower;
-            diamondsText.text = $"{diamondCount} <sprite=0>";
-        }
+        CounterValue += clickPower;
     }
     private void Update()
     {
-        Click();
+        CounterText.text = $"{CounterValue} <sprite=0>";
     }
 }
