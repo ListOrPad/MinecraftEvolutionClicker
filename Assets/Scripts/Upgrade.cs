@@ -10,13 +10,12 @@ public class Upgrade
         this.upradeID = upgradeID;
     }
     public BigInteger Cost { get; set; }
+    public BigInteger idleUpgradeValue { get; set; }
+    public BigInteger clickUpgradeValue { get; set; }
 
     private int upradeID;
-    private bool idle;
+    public bool isIdleUpgrade { get; set; } = true;
     private bool isUpgradeShown;
-
-
-  
 
     private bool isUpgradeAvailable()
     {

@@ -16,6 +16,7 @@ public class Shop : MonoBehaviour
 
     private void InitializeUpgrades()
     {
+        //set costs of upgrades and initialize upgrade list
         upgradePrefabList = GameObject.Find("Upgrades").GetComponentsInChildren<UpgradePrefab>();
         for (int i = 0; i < upgradePrefabList.Length; i++)
         {
@@ -23,14 +24,35 @@ public class Shop : MonoBehaviour
             upgradeList[i].Cost = upgradeCosts[i];
             upgradePrefabList[i].UpgradeCostText.text = upgradeCosts[i].ToString() + " <sprite=0>";
         }
+        //set values of upgrades
+        upgradeList[0].idleUpgradeValue = 1;
+        upgradeList[1].isIdleUpgrade = false;
+        upgradeList[1].clickUpgradeValue = 1;
     }
 
-    public void BuyUpgrade(int upgradeID) //or list of upgrades as param?
+    /// <summary>
+    /// set to onClick event of the upgrade button
+    /// </summary>
+    public void BuyUpgrade(int upgradeID)
     {
-        Game.CounterValue -= GetUpgrade(upgradeID).Cost;
-        if (Game.CounterValue < 0)
+        if (Game.CounterValue >= GetUpgrade(upgradeID).Cost)
         {
-            Game.CounterValue += GetUpgrade(upgradeID).Cost;
+            //logic of substracting cost of upgrade from counter
+            Game.CounterValue -= GetUpgrade(upgradeID).Cost;
+            if (Game.CounterValue < 0)
+            {
+                Game.CounterValue += GetUpgrade(upgradeID).Cost;
+            }
+
+            //logic of upgrading dps and click power
+            if (GetUpgrade(upgradeID).isIdleUpgrade)
+            {
+                Game.IncomePerSecond += GetUpgrade(upgradeID).idleUpgradeValue;
+            }
+            else
+            {
+                Game.ClickPower += GetUpgrade(upgradeID).clickUpgradeValue;
+            }
         }
     }
 
