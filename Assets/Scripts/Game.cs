@@ -31,7 +31,7 @@ public class Game : MonoBehaviour
     public void Click()
     {
         CounterValue += ClickPower;
-        evolution.expBar.value += 1;
+        evolution.Evolve();
     }
     private void Update()
     {
