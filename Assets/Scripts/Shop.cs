@@ -6,9 +6,11 @@ using UnityEngine.UI;
 
 public class Shop : MonoBehaviour
 {
+    private NumberFormatter numberFormatter = new NumberFormatter();
+
     private UpgradePrefab[] upgradePrefabList = new UpgradePrefab[16];
     private List<Upgrade> upgradeList = new List<Upgrade>( new Upgrade[16] );
-    private List<BigInteger> upgradeCosts = new List<BigInteger>{ 15, 100, 1500, 10000, 110000, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15 };
+    private List<BigInteger> upgradeCosts = new List<BigInteger>{ 15, 40, 1500, 4750, 110000, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15 };
     private void Start()
     {
         InitializeUpgrades();
@@ -22,12 +24,16 @@ public class Shop : MonoBehaviour
         {
             upgradeList[i] = new Upgrade(i);
             upgradeList[i].Cost = upgradeCosts[i];
-            upgradePrefabList[i].UpgradeCostText.text = upgradeCosts[i].ToString() + " <sprite=0>";
+            upgradePrefabList[i].UpgradeCostText.text = numberFormatter.FormatNumber(upgradeCosts[i]) + " <sprite=0>";
         }
         //set values of upgrades
         upgradeList[0].idleUpgradeValue = 1;
         upgradeList[1].isIdleUpgrade = false;
         upgradeList[1].clickUpgradeValue = 1;
+        upgradeList[2].idleUpgradeValue = 25;
+        upgradeList[3].clickUpgradeValue = 50;
+
+
     }
 
     /// <summary>

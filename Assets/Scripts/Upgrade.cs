@@ -4,7 +4,6 @@ using System.Numerics;
 
 public class Upgrade
 {
-    
     public Upgrade(int upgradeID)
     {
         this.upradeID = upgradeID;
