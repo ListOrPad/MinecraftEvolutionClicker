@@ -8,9 +8,21 @@ public class NumberFormatter
 
     public string FormatNumber(BigInteger number)
     {
-        if (number >= 1000000000)
+        if ((double)number >= Mathf.Pow(10, 18)) //Quintillion
         {
-            return ((decimal)number / 1000000000m).ToString("0.##") + "B";
+            return ((double)number / Mathf.Pow(10, 18)).ToString("0.##") + "Q";
+        }
+        else if ((double)number >= Mathf.Pow(10, 15)) //Quadrillion
+        {
+            return ((double)number / Mathf.Pow(10, 15)).ToString("0.##") + "q";
+        }
+        else if ((double)number >= Mathf.Pow(10, 12)) //Trillion
+        {
+            return ((double)number / Mathf.Pow(10, 12)).ToString("0.##") + "T";
+        }
+        else if (number >= 1_000_000_000)
+        {
+            return ((decimal)number / 1_000_000_000m).ToString("0.##") + "B";
         }
         else if (number >= 1000000)
         {

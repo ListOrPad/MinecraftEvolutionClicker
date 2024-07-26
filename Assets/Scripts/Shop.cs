@@ -10,7 +10,23 @@ public class Shop : MonoBehaviour
 
     private UpgradePrefab[] upgradePrefabList = new UpgradePrefab[16];
     private List<Upgrade> upgradeList = new List<Upgrade>( new Upgrade[16] );
-    private List<BigInteger> upgradeCosts = new List<BigInteger>{ 15, 40, 1500, 4750, 110000, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15 };
+    private List<BigInteger> upgradeCosts = new List<BigInteger>{ 15, 40, 1500, 4750, 110000, (BigInteger)oneMillion,
+        (BigInteger)tenMillion, (BigInteger)fifteenMillion, (BigInteger) sevenHundredMillion, (BigInteger) threeBillion,
+        (BigInteger) fiftyBillion, (BigInteger) oneTrillion, (BigInteger) tenTrillion, (BigInteger) twoHundredFiftyTrillion,
+        (BigInteger) twoQuadrillion, (BigInteger)fiveQuadrillion };
+
+    private const double oneMillion = 1_000_000;
+    private const double tenMillion = 10_000_000;
+    private const double fifteenMillion = 15_000_000;
+    private const double sevenHundredMillion = 700_000_000;
+    private const double threeBillion = 3_000_000_000;
+    private const double fiftyBillion = 50_000_000_000;
+    private const double oneTrillion = 1_000_000_000_000;
+    private const double tenTrillion = 10_000_000_000_000;
+    private const double twoHundredFiftyTrillion = 250_000_000_000_000;
+    private const double twoQuadrillion = 2_000_000_000_000_000;
+    private const double fiveQuadrillion = 5_000_000_000_000_000;
+
     private void Start()
     {
         InitializeUpgrades();
@@ -29,7 +45,7 @@ public class Shop : MonoBehaviour
         //set values of upgrades
         upgradeList[0].idleUpgradeValue = 1;
         upgradeList[1].isIdleUpgrade = false;
-        upgradeList[1].clickUpgradeValue = 1;
+        upgradeList[1].clickUpgradeValue = 2;
         upgradeList[2].idleUpgradeValue = 25;
         upgradeList[3].clickUpgradeValue = 50;
 

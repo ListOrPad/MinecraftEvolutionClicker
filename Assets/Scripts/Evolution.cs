@@ -40,6 +40,15 @@ public class Evolution : MonoBehaviour
     }
     private bool LvlUp()
     {
-        return expBar.value >= expBar.maxValue;
+        if (creatureSprites.Length > level)
+        {
+            return expBar.value >= expBar.maxValue;
+        }
+        else if (creatureSprites.Length == level)
+        {
+            expBar.value = expBar.maxValue;
+            levelText.text = $"максимальный уровень";
+        }
+        return false;
     }
 }

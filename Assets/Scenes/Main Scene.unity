@@ -231,12 +231,8 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2054478319013774982, guid: 1c2f0c2f70bd9c94db662a609a3d057d, type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 679.27
-      objectReference: {fileID: 0}
-    - target: {fileID: 2054478319013774982, guid: 1c2f0c2f70bd9c94db662a609a3d057d, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 225.418
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2054478319013774982, guid: 1c2f0c2f70bd9c94db662a609a3d057d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -300,11 +296,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5582746971495443499, guid: 1c2f0c2f70bd9c94db662a609a3d057d, type: 3}
       propertyPath: m_Name
-      value: Upgrade 1 (1)
+      value: Upgrade 1 (1) wooden pickaxe
       objectReference: {fileID: 0}
     - target: {fileID: 5752623196718361295, guid: 1c2f0c2f70bd9c94db662a609a3d057d, type: 3}
       propertyPath: m_text
-      value: "+1 \u0430\u043B\u043C\u0430\u0437 \u0437\u0430 \u043A\u043B\u0438\u043A"
+      value: "+2 \u0430\u043B\u043C\u0430\u0437\u0430 \u0437\u0430 \u043A\u043B\u0438\u043A"
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -428,7 +424,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -254.89835, y: -476.20984}
+  m_AnchoredPosition: {x: -242, y: -476.20984}
   m_SizeDelta: {x: 943.7286, y: 71.0164}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &128799763
@@ -516,7 +512,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -836, y: 442.35266}
+  m_AnchoredPosition: {x: -826, y: 378}
   m_SizeDelta: {x: 152.3712, y: 90.3751}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &165839591
@@ -601,11 +597,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2054478319013774982, guid: 1c2f0c2f70bd9c94db662a609a3d057d, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 679.27
+      value: 725
       objectReference: {fileID: 0}
     - target: {fileID: 2054478319013774982, guid: 1c2f0c2f70bd9c94db662a609a3d057d, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 225.418
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2054478319013774982, guid: 1c2f0c2f70bd9c94db662a609a3d057d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -655,13 +651,41 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4342744777482644020, guid: 1c2f0c2f70bd9c94db662a609a3d057d, type: 3}
+      propertyPath: m_text
+      value: "\u0410\u043B\u043C\u0430\u0437"
+      objectReference: {fileID: 0}
     - target: {fileID: 4643793382355111309, guid: 1c2f0c2f70bd9c94db662a609a3d057d, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 881150890}
+    - target: {fileID: 4643793382355111309, guid: 1c2f0c2f70bd9c94db662a609a3d057d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
+      value: 15
+      objectReference: {fileID: 0}
     - target: {fileID: 5582746971495443499, guid: 1c2f0c2f70bd9c94db662a609a3d057d, type: 3}
       propertyPath: m_Name
-      value: Upgrade 1 (15)
+      value: Upgrade 1 (15) diamond
+      objectReference: {fileID: 0}
+    - target: {fileID: 5752623196718361295, guid: 1c2f0c2f70bd9c94db662a609a3d057d, type: 3}
+      propertyPath: m_text
+      value: "+10t \u0430\u043B\u043C\u0430\u0437\u043E\u0432 \u0432 \u0441\u0435\u043A\u0443\u043D\u0434\u0443"
+      objectReference: {fileID: 0}
+    - target: {fileID: 8485092879808839582, guid: 1c2f0c2f70bd9c94db662a609a3d057d, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 7208ce4c226d69e4986425e4e2f3d645, type: 3}
+    - target: {fileID: 8485092879808839582, guid: 1c2f0c2f70bd9c94db662a609a3d057d, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8485092879808839582, guid: 1c2f0c2f70bd9c94db662a609a3d057d, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8485092879808839582, guid: 1c2f0c2f70bd9c94db662a609a3d057d, type: 3}
+      propertyPath: m_Color.r
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -702,11 +726,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2054478319013774982, guid: 1c2f0c2f70bd9c94db662a609a3d057d, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 679.27
+      value: 725
       objectReference: {fileID: 0}
     - target: {fileID: 2054478319013774982, guid: 1c2f0c2f70bd9c94db662a609a3d057d, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 225.418
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2054478319013774982, guid: 1c2f0c2f70bd9c94db662a609a3d057d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -756,14 +780,30 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4342744777482644020, guid: 1c2f0c2f70bd9c94db662a609a3d057d, type: 3}
+      propertyPath: m_text
+      value: "\u041A\u0440\u0430\u0441\u043D\u0430\u044F \u041F\u044B\u043B\u044C"
+      objectReference: {fileID: 0}
     - target: {fileID: 4643793382355111309, guid: 1c2f0c2f70bd9c94db662a609a3d057d, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 881150890}
+    - target: {fileID: 4643793382355111309, guid: 1c2f0c2f70bd9c94db662a609a3d057d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 5582746971495443499, guid: 1c2f0c2f70bd9c94db662a609a3d057d, type: 3}
       propertyPath: m_Name
-      value: Upgrade 1 (7)
+      value: Upgrade 1 (7) red dust
       objectReference: {fileID: 0}
+    - target: {fileID: 5752623196718361295, guid: 1c2f0c2f70bd9c94db662a609a3d057d, type: 3}
+      propertyPath: m_text
+      value: "+200K \u0430\u043B\u043C\u0430\u0437\u043E\u0432 \u0432 \u0441\u0435\u043A\u0443\u043D\u0434\u0443"
+      objectReference: {fileID: 0}
+    - target: {fileID: 8485092879808839582, guid: 1c2f0c2f70bd9c94db662a609a3d057d, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 3becb996a9a56944a832efe5f75fe749, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -803,11 +843,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2054478319013774982, guid: 1c2f0c2f70bd9c94db662a609a3d057d, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 679.27
+      value: 725
       objectReference: {fileID: 0}
     - target: {fileID: 2054478319013774982, guid: 1c2f0c2f70bd9c94db662a609a3d057d, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 225.418
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2054478319013774982, guid: 1c2f0c2f70bd9c94db662a609a3d057d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -857,13 +897,25 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4342744777482644020, guid: 1c2f0c2f70bd9c94db662a609a3d057d, type: 3}
+      propertyPath: m_text
+      value: "\u0410\u043B\u043C\u0430\u0437\u043D\u0430\u044F \u041A\u0438\u0440\u043A\u0430"
+      objectReference: {fileID: 0}
     - target: {fileID: 4643793382355111309, guid: 1c2f0c2f70bd9c94db662a609a3d057d, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 881150890}
+    - target: {fileID: 4643793382355111309, guid: 1c2f0c2f70bd9c94db662a609a3d057d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
+      value: 11
+      objectReference: {fileID: 0}
     - target: {fileID: 5582746971495443499, guid: 1c2f0c2f70bd9c94db662a609a3d057d, type: 3}
       propertyPath: m_Name
-      value: Upgrade 1 (11)
+      value: Upgrade 1 (11) diamond pickaxe
+      objectReference: {fileID: 0}
+    - target: {fileID: 5752623196718361295, guid: 1c2f0c2f70bd9c94db662a609a3d057d, type: 3}
+      propertyPath: m_text
+      value: "+1B \u0430\u043B\u043C\u0430\u0437\u043E\u0432 \u0437\u0430 \u043A\u043B\u0438\u043A"
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -940,11 +992,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2054478319013774982, guid: 1c2f0c2f70bd9c94db662a609a3d057d, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 679.27
+      value: 725
       objectReference: {fileID: 0}
     - target: {fileID: 2054478319013774982, guid: 1c2f0c2f70bd9c94db662a609a3d057d, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 225.418
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2054478319013774982, guid: 1c2f0c2f70bd9c94db662a609a3d057d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -994,6 +1046,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4342744777482644020, guid: 1c2f0c2f70bd9c94db662a609a3d057d, type: 3}
+      propertyPath: m_text
+      value: "\u041A\u0430\u043C\u0435\u043D\u044C"
+      objectReference: {fileID: 0}
     - target: {fileID: 4643793382355111309, guid: 1c2f0c2f70bd9c94db662a609a3d057d, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -1004,7 +1060,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5582746971495443499, guid: 1c2f0c2f70bd9c94db662a609a3d057d, type: 3}
       propertyPath: m_Name
-      value: Upgrade 1 (2)
+      value: Upgrade 1 (2) stone
+      objectReference: {fileID: 0}
+    - target: {fileID: 5752623196718361295, guid: 1c2f0c2f70bd9c94db662a609a3d057d, type: 3}
+      propertyPath: m_text
+      value: "+25 \u0430\u043B\u043C\u0430\u0437\u043E\u0432 \u0432 \u0441\u0435\u043A\u0443\u043D\u0434\u0443"
+      objectReference: {fileID: 0}
+    - target: {fileID: 8485092879808839582, guid: 1c2f0c2f70bd9c94db662a609a3d057d, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 05a4af30a420b7c44933981a0f5bdba3, type: 3}
+    - target: {fileID: 8485092879808839582, guid: 1c2f0c2f70bd9c94db662a609a3d057d, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8485092879808839582, guid: 1c2f0c2f70bd9c94db662a609a3d057d, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8485092879808839582, guid: 1c2f0c2f70bd9c94db662a609a3d057d, type: 3}
+      propertyPath: m_Color.r
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1325,11 +1401,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2054478319013774982, guid: 1c2f0c2f70bd9c94db662a609a3d057d, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 679.27
+      value: 725
       objectReference: {fileID: 0}
     - target: {fileID: 2054478319013774982, guid: 1c2f0c2f70bd9c94db662a609a3d057d, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 225.418
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2054478319013774982, guid: 1c2f0c2f70bd9c94db662a609a3d057d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1379,6 +1455,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4342744777482644020, guid: 1c2f0c2f70bd9c94db662a609a3d057d, type: 3}
+      propertyPath: m_text
+      value: "\u041A\u0430\u043C\u0435\u043D\u043D\u0430\u044F \u043A\u0438\u0440\u043A\u0430"
+      objectReference: {fileID: 0}
     - target: {fileID: 4643793382355111309, guid: 1c2f0c2f70bd9c94db662a609a3d057d, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -1389,7 +1469,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5582746971495443499, guid: 1c2f0c2f70bd9c94db662a609a3d057d, type: 3}
       propertyPath: m_Name
-      value: Upgrade 1 (3)
+      value: Upgrade 1 (3) stone pickaxe
+      objectReference: {fileID: 0}
+    - target: {fileID: 5752623196718361295, guid: 1c2f0c2f70bd9c94db662a609a3d057d, type: 3}
+      propertyPath: m_text
+      value: "+50 \u0430\u043B\u043C\u0430\u0437\u043E\u0432 \u0437\u0430 \u043A\u043B\u0438\u043A"
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1430,7 +1514,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -836, y: 304.4215}
+  m_AnchoredPosition: {x: -836, y: -465}
   m_SizeDelta: {x: 152.3712, y: 90.3751}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &577994806
@@ -1729,11 +1813,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2054478319013774982, guid: 1c2f0c2f70bd9c94db662a609a3d057d, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 679.27
+      value: 725
       objectReference: {fileID: 0}
     - target: {fileID: 2054478319013774982, guid: 1c2f0c2f70bd9c94db662a609a3d057d, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 225.418
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2054478319013774982, guid: 1c2f0c2f70bd9c94db662a609a3d057d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1783,14 +1867,30 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4342744777482644020, guid: 1c2f0c2f70bd9c94db662a609a3d057d, type: 3}
+      propertyPath: m_text
+      value: "\u0418\u0437\u0443\u043C\u0440\u0443\u0434"
+      objectReference: {fileID: 0}
     - target: {fileID: 4643793382355111309, guid: 1c2f0c2f70bd9c94db662a609a3d057d, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 881150890}
+    - target: {fileID: 4643793382355111309, guid: 1c2f0c2f70bd9c94db662a609a3d057d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
+      value: 13
+      objectReference: {fileID: 0}
     - target: {fileID: 5582746971495443499, guid: 1c2f0c2f70bd9c94db662a609a3d057d, type: 3}
       propertyPath: m_Name
-      value: Upgrade 1 (13)
+      value: Upgrade 1 (13) emerald
       objectReference: {fileID: 0}
+    - target: {fileID: 5752623196718361295, guid: 1c2f0c2f70bd9c94db662a609a3d057d, type: 3}
+      propertyPath: m_text
+      value: "+300B \u0430\u043B\u043C\u0430\u0437\u043E\u0432 \u0432 \u0441\u0435\u043A\u0443\u043D\u0434\u0443"
+      objectReference: {fileID: 0}
+    - target: {fileID: 8485092879808839582, guid: 1c2f0c2f70bd9c94db662a609a3d057d, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 11f8bc049c3f5e94f8bb1064fa1c7dc8, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1978,11 +2078,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2054478319013774982, guid: 1c2f0c2f70bd9c94db662a609a3d057d, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 679.27
+      value: 725
       objectReference: {fileID: 0}
     - target: {fileID: 2054478319013774982, guid: 1c2f0c2f70bd9c94db662a609a3d057d, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 225.418
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2054478319013774982, guid: 1c2f0c2f70bd9c94db662a609a3d057d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2032,14 +2132,30 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4342744777482644020, guid: 1c2f0c2f70bd9c94db662a609a3d057d, type: 3}
+      propertyPath: m_text
+      value: "\u0417\u043E\u043B\u043E\u0442\u043E\u0439 \u0421\u043B\u0438\u0442\u043E\u043A"
+      objectReference: {fileID: 0}
     - target: {fileID: 4643793382355111309, guid: 1c2f0c2f70bd9c94db662a609a3d057d, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 881150890}
+    - target: {fileID: 4643793382355111309, guid: 1c2f0c2f70bd9c94db662a609a3d057d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
+      value: 12
+      objectReference: {fileID: 0}
     - target: {fileID: 5582746971495443499, guid: 1c2f0c2f70bd9c94db662a609a3d057d, type: 3}
       propertyPath: m_Name
-      value: Upgrade 1 (12)
+      value: Upgrade 1 (12) gold bar
       objectReference: {fileID: 0}
+    - target: {fileID: 5752623196718361295, guid: 1c2f0c2f70bd9c94db662a609a3d057d, type: 3}
+      propertyPath: m_text
+      value: "+10B \u0430\u043B\u043C\u0430\u0437\u043E\u0432 \u0432 \u0441\u0435\u043A\u0443\u043D\u0434\u0443"
+      objectReference: {fileID: 0}
+    - target: {fileID: 8485092879808839582, guid: 1c2f0c2f70bd9c94db662a609a3d057d, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: c3e7a7e73dc6d6145b237741538a41ad, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2269,6 +2385,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   expBar: {fileID: 128799763}
+  levelText: {fileID: 1228365118}
+  creatureSprites:
+  - {fileID: 21300000, guid: 27739a2cc704dad42bca0b685669461e, type: 3}
+  - {fileID: 21300000, guid: 79ad79f22968d2045823c0bbbace1dca, type: 3}
+  - {fileID: 21300000, guid: d42093fd529be054292e6c20bb9cf414, type: 3}
+  - {fileID: 21300000, guid: d77e9f77a8c319f46b7fee5d775e7ba9, type: 3}
+  - {fileID: 21300000, guid: af3abcc5f2f97c54899229c03fb66d8c, type: 3}
+  - {fileID: 21300000, guid: 6f347a3e3ad658e4d896fe6157dd3404, type: 3}
+  - {fileID: 21300000, guid: a3b1bfbe3d2fb1441870c2ad991b8fea, type: 3}
 --- !u!1 &898548213
 GameObject:
   m_ObjectHideFlags: 0
@@ -2383,11 +2508,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2054478319013774982, guid: 1c2f0c2f70bd9c94db662a609a3d057d, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 679.27
+      value: 725
       objectReference: {fileID: 0}
     - target: {fileID: 2054478319013774982, guid: 1c2f0c2f70bd9c94db662a609a3d057d, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 225.418
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2054478319013774982, guid: 1c2f0c2f70bd9c94db662a609a3d057d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2437,14 +2562,30 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4342744777482644020, guid: 1c2f0c2f70bd9c94db662a609a3d057d, type: 3}
+      propertyPath: m_text
+      value: "\u041A\u0432\u0430\u0440\u0446"
+      objectReference: {fileID: 0}
     - target: {fileID: 4643793382355111309, guid: 1c2f0c2f70bd9c94db662a609a3d057d, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 881150890}
+    - target: {fileID: 4643793382355111309, guid: 1c2f0c2f70bd9c94db662a609a3d057d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 5582746971495443499, guid: 1c2f0c2f70bd9c94db662a609a3d057d, type: 3}
       propertyPath: m_Name
-      value: Upgrade 1 (10)
+      value: Upgrade 1 (10) quartz
       objectReference: {fileID: 0}
+    - target: {fileID: 5752623196718361295, guid: 1c2f0c2f70bd9c94db662a609a3d057d, type: 3}
+      propertyPath: m_text
+      value: "+650M \u0430\u043B\u043C\u0430\u0437\u043E\u0432 \u0432 \u0441\u0435\u043A\u0443\u043D\u0434\u0443"
+      objectReference: {fileID: 0}
+    - target: {fileID: 8485092879808839582, guid: 1c2f0c2f70bd9c94db662a609a3d057d, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: dea3f498ab9b7f84faffc5163aa79ce3, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2729,7 +2870,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -903.93176, y: -476.20984}
+  m_AnchoredPosition: {x: 201, y: 469}
   m_SizeDelta: {x: 79.8797, y: 79.8793}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1146908233
@@ -2804,7 +2945,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -798.905, y: -476.20984}
+  m_AnchoredPosition: {x: 86, y: 469}
   m_SizeDelta: {x: 79.8797, y: 79.8793}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1155168294
@@ -2900,8 +3041,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 1, y: -1953.3441}
-  m_SizeDelta: {x: 679.27, y: 3906.6877}
+  m_AnchoredPosition: {x: 14.4, y: 0.00012207031}
+  m_SizeDelta: {x: 679.27, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1174486531
 MonoBehaviour:
@@ -2916,7 +3057,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_HorizontalFit: 0
-  m_VerticalFit: 0
+  m_VerticalFit: 2
 --- !u!114 &1174486532
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2935,11 +3076,11 @@ MonoBehaviour:
     m_Top: 0
     m_Bottom: 0
   m_ChildAlignment: 4
-  m_Spacing: 20
+  m_Spacing: -79
   m_ChildForceExpandWidth: 1
   m_ChildForceExpandHeight: 1
   m_ChildControlWidth: 0
-  m_ChildControlHeight: 0
+  m_ChildControlHeight: 1
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
@@ -2982,11 +3123,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2054478319013774982, guid: 1c2f0c2f70bd9c94db662a609a3d057d, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 679.27
+      value: 725
       objectReference: {fileID: 0}
     - target: {fileID: 2054478319013774982, guid: 1c2f0c2f70bd9c94db662a609a3d057d, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 225.418
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2054478319013774982, guid: 1c2f0c2f70bd9c94db662a609a3d057d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3036,13 +3177,25 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4342744777482644020, guid: 1c2f0c2f70bd9c94db662a609a3d057d, type: 3}
+      propertyPath: m_text
+      value: "\u0416\u0435\u043B\u0435\u0437\u043D\u0430\u044F \u041A\u0438\u0440\u043A\u0430"
+      objectReference: {fileID: 0}
     - target: {fileID: 4643793382355111309, guid: 1c2f0c2f70bd9c94db662a609a3d057d, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 881150890}
+    - target: {fileID: 4643793382355111309, guid: 1c2f0c2f70bd9c94db662a609a3d057d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 5582746971495443499, guid: 1c2f0c2f70bd9c94db662a609a3d057d, type: 3}
       propertyPath: m_Name
-      value: Upgrade 1 (6)
+      value: Upgrade 1 (6) iron pickaxe
+      objectReference: {fileID: 0}
+    - target: {fileID: 5752623196718361295, guid: 1c2f0c2f70bd9c94db662a609a3d057d, type: 3}
+      propertyPath: m_text
+      value: "+50K \u0430\u043B\u043C\u0430\u0437\u043E\u0432 \u0437\u0430 \u043A\u043B\u0438\u043A"
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3088,8 +3241,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.000030518, y: 5}
-  m_SizeDelta: {x: 403.319, y: 35.508}
+  m_AnchoredPosition: {x: -18.3768, y: 5}
+  m_SizeDelta: {x: 600.9936, y: 35.508}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1228365118
 MonoBehaviour:
@@ -3222,11 +3375,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2054478319013774982, guid: 1c2f0c2f70bd9c94db662a609a3d057d, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 679.27
+      value: 725
       objectReference: {fileID: 0}
     - target: {fileID: 2054478319013774982, guid: 1c2f0c2f70bd9c94db662a609a3d057d, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 225.418
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2054478319013774982, guid: 1c2f0c2f70bd9c94db662a609a3d057d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3276,13 +3429,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4342744777482644020, guid: 1c2f0c2f70bd9c94db662a609a3d057d, type: 3}
+      propertyPath: m_text
+      value: "\u041D\u0435\u0437\u0435\u0440\u0438\u0442\u043E\u0432\u0430\u044F
+        \u041A\u0438\u0440\u043A\u0430"
+      objectReference: {fileID: 0}
     - target: {fileID: 4643793382355111309, guid: 1c2f0c2f70bd9c94db662a609a3d057d, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 881150890}
+    - target: {fileID: 4643793382355111309, guid: 1c2f0c2f70bd9c94db662a609a3d057d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
+      value: 14
+      objectReference: {fileID: 0}
     - target: {fileID: 5582746971495443499, guid: 1c2f0c2f70bd9c94db662a609a3d057d, type: 3}
       propertyPath: m_Name
-      value: Upgrade 1 (14)
+      value: Upgrade 1 (14) nezerith pickaxe
+      objectReference: {fileID: 0}
+    - target: {fileID: 5752623196718361295, guid: 1c2f0c2f70bd9c94db662a609a3d057d, type: 3}
+      propertyPath: m_text
+      value: "+1t \u0430\u043B\u043C\u0430\u0437\u043E\u0432 \u0437\u0430 \u043A\u043B\u0438\u043A"
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3343,11 +3509,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2054478319013774982, guid: 1c2f0c2f70bd9c94db662a609a3d057d, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 679.27
+      value: 725
       objectReference: {fileID: 0}
     - target: {fileID: 2054478319013774982, guid: 1c2f0c2f70bd9c94db662a609a3d057d, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 225.418
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2054478319013774982, guid: 1c2f0c2f70bd9c94db662a609a3d057d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3397,14 +3563,30 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4342744777482644020, guid: 1c2f0c2f70bd9c94db662a609a3d057d, type: 3}
+      propertyPath: m_text
+      value: "\u041B\u0430\u0437\u0443\u0440\u0438\u0442"
+      objectReference: {fileID: 0}
     - target: {fileID: 4643793382355111309, guid: 1c2f0c2f70bd9c94db662a609a3d057d, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 881150890}
+    - target: {fileID: 4643793382355111309, guid: 1c2f0c2f70bd9c94db662a609a3d057d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 5582746971495443499, guid: 1c2f0c2f70bd9c94db662a609a3d057d, type: 3}
       propertyPath: m_Name
-      value: Upgrade 1 (9)
+      value: Upgrade 1 (9) lapis lazuli
       objectReference: {fileID: 0}
+    - target: {fileID: 5752623196718361295, guid: 1c2f0c2f70bd9c94db662a609a3d057d, type: 3}
+      propertyPath: m_text
+      value: "+45M \u0430\u043B\u043C\u0430\u0437\u043E\u0432 \u0432 \u0441\u0435\u043A\u0443\u043D\u0434\u0443"
+      objectReference: {fileID: 0}
+    - target: {fileID: 8485092879808839582, guid: 1c2f0c2f70bd9c94db662a609a3d057d, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 0ad17c0a32348b34db5eec9d9c931f18, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3534,11 +3716,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2054478319013774982, guid: 1c2f0c2f70bd9c94db662a609a3d057d, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 679.27
+      value: 725
       objectReference: {fileID: 0}
     - target: {fileID: 2054478319013774982, guid: 1c2f0c2f70bd9c94db662a609a3d057d, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 225.418
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2054478319013774982, guid: 1c2f0c2f70bd9c94db662a609a3d057d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3588,6 +3770,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4342744777482644020, guid: 1c2f0c2f70bd9c94db662a609a3d057d, type: 3}
+      propertyPath: m_text
+      value: "\u0423\u0433\u043E\u043B\u044C"
+      objectReference: {fileID: 0}
     - target: {fileID: 4643793382355111309, guid: 1c2f0c2f70bd9c94db662a609a3d057d, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -3598,8 +3784,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5582746971495443499, guid: 1c2f0c2f70bd9c94db662a609a3d057d, type: 3}
       propertyPath: m_Name
-      value: Upgrade 1 (4)
+      value: Upgrade 1 (4) coal
       objectReference: {fileID: 0}
+    - target: {fileID: 5752623196718361295, guid: 1c2f0c2f70bd9c94db662a609a3d057d, type: 3}
+      propertyPath: m_text
+      value: "+2K \u0430\u043B\u043C\u0430\u0437\u043E\u0432 \u0432 \u0441\u0435\u043A\u0443\u043D\u0434\u0443"
+      objectReference: {fileID: 0}
+    - target: {fileID: 8485092879808839582, guid: 1c2f0c2f70bd9c94db662a609a3d057d, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 8dcdd80d847c9ab41bb1067b99a1f617, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3687,8 +3881,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 898548215}
   m_HandleRect: {fileID: 898548214}
   m_Direction: 2
-  m_Value: 1.0000001
-  m_Size: 0.23221976
+  m_Value: 0.35626256
+  m_Size: 0.22328575
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -3878,7 +4072,7 @@ GameObject:
   - component: {fileID: 1938712092}
   - component: {fileID: 1938712094}
   m_Layer: 5
-  m_Name: Character
+  m_Name: Creature
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4031,11 +4225,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2054478319013774982, guid: 1c2f0c2f70bd9c94db662a609a3d057d, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 679.27
+      value: 725
       objectReference: {fileID: 0}
     - target: {fileID: 2054478319013774982, guid: 1c2f0c2f70bd9c94db662a609a3d057d, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 225.418
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2054478319013774982, guid: 1c2f0c2f70bd9c94db662a609a3d057d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -4085,13 +4279,25 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4342744777482644020, guid: 1c2f0c2f70bd9c94db662a609a3d057d, type: 3}
+      propertyPath: m_text
+      value: "\u0417\u043E\u043B\u043E\u0442\u0430\u044F \u041A\u0438\u0440\u043A\u0430"
+      objectReference: {fileID: 0}
     - target: {fileID: 4643793382355111309, guid: 1c2f0c2f70bd9c94db662a609a3d057d, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 881150890}
+    - target: {fileID: 4643793382355111309, guid: 1c2f0c2f70bd9c94db662a609a3d057d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 5582746971495443499, guid: 1c2f0c2f70bd9c94db662a609a3d057d, type: 3}
       propertyPath: m_Name
-      value: Upgrade 1 (8)
+      value: Upgrade 1 (8) golden pickaxe
+      objectReference: {fileID: 0}
+    - target: {fileID: 5752623196718361295, guid: 1c2f0c2f70bd9c94db662a609a3d057d, type: 3}
+      propertyPath: m_text
+      value: "+1M \u0430\u043B\u043C\u0430\u0437\u043E\u0432 \u0437\u0430 \u043A\u043B\u0438\u043A"
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -4207,11 +4413,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2054478319013774982, guid: 1c2f0c2f70bd9c94db662a609a3d057d, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 679.27
+      value: 725
       objectReference: {fileID: 0}
     - target: {fileID: 2054478319013774982, guid: 1c2f0c2f70bd9c94db662a609a3d057d, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 225.418
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2054478319013774982, guid: 1c2f0c2f70bd9c94db662a609a3d057d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -4261,14 +4467,30 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4342744777482644020, guid: 1c2f0c2f70bd9c94db662a609a3d057d, type: 3}
+      propertyPath: m_text
+      value: "\u0416\u0435\u043B\u0435\u0437\u043D\u044B\u0439 \u0441\u043B\u0438\u0442\u043E\u043A"
+      objectReference: {fileID: 0}
     - target: {fileID: 4643793382355111309, guid: 1c2f0c2f70bd9c94db662a609a3d057d, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 881150890}
+    - target: {fileID: 4643793382355111309, guid: 1c2f0c2f70bd9c94db662a609a3d057d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 5582746971495443499, guid: 1c2f0c2f70bd9c94db662a609a3d057d, type: 3}
       propertyPath: m_Name
-      value: Upgrade 1 (5)
+      value: Upgrade 1 (5) iron bar
       objectReference: {fileID: 0}
+    - target: {fileID: 5752623196718361295, guid: 1c2f0c2f70bd9c94db662a609a3d057d, type: 3}
+      propertyPath: m_text
+      value: "+25K \u0430\u043B\u043C\u0430\u0437\u043E\u0432 \u0432 \u0441\u0435\u043A\u0443\u043D\u0434\u0443"
+      objectReference: {fileID: 0}
+    - target: {fileID: 8485092879808839582, guid: 1c2f0c2f70bd9c94db662a609a3d057d, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 5f65828c75a2cd84ebb33f0366561f5f, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4307,12 +4529,8 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2054478319013774982, guid: 1c2f0c2f70bd9c94db662a609a3d057d, type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 679.27
-      objectReference: {fileID: 0}
-    - target: {fileID: 2054478319013774982, guid: 1c2f0c2f70bd9c94db662a609a3d057d, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 225.418
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2054478319013774982, guid: 1c2f0c2f70bd9c94db662a609a3d057d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -4362,13 +4580,61 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3313219272231465616, guid: 1c2f0c2f70bd9c94db662a609a3d057d, type: 3}
+      propertyPath: m_Type
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3313219272231465616, guid: 1c2f0c2f70bd9c94db662a609a3d057d, type: 3}
+      propertyPath: m_UseSpriteMesh
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3313219272231465616, guid: 1c2f0c2f70bd9c94db662a609a3d057d, type: 3}
+      propertyPath: m_PreserveAspect
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4342744777482644020, guid: 1c2f0c2f70bd9c94db662a609a3d057d, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 44
+      objectReference: {fileID: 0}
+    - target: {fileID: 4342744777482644020, guid: 1c2f0c2f70bd9c94db662a609a3d057d, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4278255546
+      objectReference: {fileID: 0}
     - target: {fileID: 4643793382355111309, guid: 1c2f0c2f70bd9c94db662a609a3d057d, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 881150890}
     - target: {fileID: 5582746971495443499, guid: 1c2f0c2f70bd9c94db662a609a3d057d, type: 3}
       propertyPath: m_Name
-      value: Upgrade 1
+      value: Upgrade 1 stick
+      objectReference: {fileID: 0}
+    - target: {fileID: 5752623196718361295, guid: 1c2f0c2f70bd9c94db662a609a3d057d, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 5752623196718361295, guid: 1c2f0c2f70bd9c94db662a609a3d057d, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4288196325
+      objectReference: {fileID: 0}
+    - target: {fileID: 6313280253832303263, guid: 1c2f0c2f70bd9c94db662a609a3d057d, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 38
+      objectReference: {fileID: 0}
+    - target: {fileID: 8485092879808839582, guid: 1c2f0c2f70bd9c94db662a609a3d057d, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 3d6285a1f0486db4f9d69fd3a7ce12f1, type: 3}
+    - target: {fileID: 8485092879808839582, guid: 1c2f0c2f70bd9c94db662a609a3d057d, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8485092879808839582, guid: 1c2f0c2f70bd9c94db662a609a3d057d, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8485092879808839582, guid: 1c2f0c2f70bd9c94db662a609a3d057d, type: 3}
+      propertyPath: m_Color.r
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
