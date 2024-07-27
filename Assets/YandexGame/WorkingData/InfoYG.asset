@@ -23,7 +23,7 @@ MonoBehaviour:
     uniqueID: 000
     photo: https://justplaygames.ru/public/icon_player.png
   AdWhenLoadingScene: 1
-  showFirstAd: 1
+  showFirstAd: 0
   rewardedAfterClosing: 0
   adDisplayCalls: 0
   fullscreenAdInterval: 60
@@ -34,11 +34,11 @@ MonoBehaviour:
   flush: 0
   localSaveSync: 1
   saveCloudInterval: 5
-  saveOnQuitGame: 0
+  saveOnQuitGame: 1
   quitGameParameters:
     objectName: YandexGame
     methodName: _SaveProgress
-  leaderboardEnable: 1
+  leaderboardEnable: 0
   saveScoreAnonymousPlayers: 1
   leaderboardSimulation:
   - technoName: advanced
@@ -216,12 +216,9 @@ MonoBehaviour:
     de: 0
     hi: 0
   fonts:
-    defaultFont:
-    - {fileID: 12800000, guid: 529e08a1b1eff1044bd7226e231141e9, type: 3}
-    ru:
-    - {fileID: 12800000, guid: 529e08a1b1eff1044bd7226e231141e9, type: 3}
-    en:
-    - {fileID: 12800000, guid: 529e08a1b1eff1044bd7226e231141e9, type: 3}
+    defaultFont: []
+    ru: []
+    en: []
     tr: []
     az: []
     be: []
@@ -248,9 +245,12 @@ MonoBehaviour:
     de: []
     hi: []
   fontsTMP:
-    defaultFont: []
-    ru: []
-    en: []
+    defaultFont:
+    - {fileID: 11400000, guid: f05d388a9627b8241904293dd4aef279, type: 2}
+    ru:
+    - {fileID: 11400000, guid: f05d388a9627b8241904293dd4aef279, type: 2}
+    en:
+    - {fileID: 11400000, guid: f05d388a9627b8241904293dd4aef279, type: 2}
     tr: []
     az: []
     be: []

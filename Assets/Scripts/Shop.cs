@@ -8,6 +8,10 @@ public class Shop : MonoBehaviour
 {
     private NumberFormatter numberFormatter = new NumberFormatter();
 
+    [Header("Sound Stuff")]
+    [SerializeField] private AudioSource audioSource;
+    [SerializeField] private AudioClip buySuccessSound;
+
     private UpgradePrefab[] upgradePrefabList = new UpgradePrefab[16];
     private List<Upgrade> upgradeList = new List<Upgrade>( new Upgrade[16] );
     private List<BigInteger> upgradeCosts = new List<BigInteger>{ 15, 40, 1500, 4750, 110000, (BigInteger)oneMillion,
@@ -69,6 +73,8 @@ public class Shop : MonoBehaviour
             {
                 Game.ClickPower += GetUpgrade(upgradeID).clickUpgradeValue;
             }
+            //play purchase sound
+            audioSource.PlayOneShot(buySuccessSound);
         }
     }
 
