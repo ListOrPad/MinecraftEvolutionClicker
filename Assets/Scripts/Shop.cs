@@ -42,14 +42,8 @@ public class Shop : MonoBehaviour
             upgradeList[i].Cost = upgradeCosts[i];
             upgradePrefabList[i].UpgradeCostText.text = numberFormatter.FormatNumber(upgradeCosts[i]) + " <sprite=0>";
         }
-        //set values of upgrades
-        upgradeList[0].idleUpgradeValue = 1;
-        upgradeList[1].isIdleUpgrade = false;
-        upgradeList[1].clickUpgradeValue = 2;
-        upgradeList[2].idleUpgradeValue = 25;
-        upgradeList[3].clickUpgradeValue = 50;
 
-
+        SetValuesOfUpgrades();
     }
 
     /// <summary>
@@ -84,4 +78,31 @@ public class Shop : MonoBehaviour
     {
         return upgradeList[upgradeId];
     }
+
+    private void SetValuesOfUpgrades()
+    {
+        upgradeList[0].idleUpgradeValue = 1;
+        upgradeList[1].isIdleUpgrade = false;
+        upgradeList[1].clickUpgradeValue = 2; //click
+        upgradeList[2].idleUpgradeValue = 25;
+        upgradeList[3].isIdleUpgrade = false;
+        upgradeList[3].clickUpgradeValue = 50; //click
+        upgradeList[4].idleUpgradeValue = 2000;
+        upgradeList[5].idleUpgradeValue = 25000;
+        upgradeList[6].isIdleUpgrade = false;
+        upgradeList[6].clickUpgradeValue = 50_000; //click
+        upgradeList[7].idleUpgradeValue = 200_000;
+        upgradeList[8].isIdleUpgrade = false;
+        upgradeList[8].clickUpgradeValue = 1_000_000; //1M click
+        upgradeList[9].idleUpgradeValue = 45_000_000; //45M
+        upgradeList[10].idleUpgradeValue = 650_000_000; //650M
+        upgradeList[11].isIdleUpgrade = false;
+        upgradeList[11].clickUpgradeValue = 1_000_000_000; //1B click
+        upgradeList[12].idleUpgradeValue = 10_000_000_000; //10B
+        upgradeList[13].idleUpgradeValue = 300_000_000_000; //300B
+        upgradeList[14].isIdleUpgrade = false;
+        upgradeList[14].clickUpgradeValue = 1_000_000_000_000; //1T click
+        upgradeList[15].idleUpgradeValue = 10_000_000_000_000; //10T
+    }
+
 }
