@@ -6,6 +6,6 @@ using UnityEngine;
 
 public class UpgradePrefab : MonoBehaviour
 {
-    [SerializeField] public Button UpgradeButton { get; set; }
+    [SerializeField] private Button UpgradeButton { get; set; }
     public TMP_Text UpgradeCostText;
 }

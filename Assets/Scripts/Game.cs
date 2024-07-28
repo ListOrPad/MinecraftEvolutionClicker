@@ -17,6 +17,13 @@ public class Game : MonoBehaviour
 
     private Evolution evolution;
     private NumberFormatter numberFormatter = new NumberFormatter();
+    [Header("Sound Stuff")]
+    [SerializeField] AudioSource audioSource;
+    [SerializeField] AudioClip tapSound;
+    [SerializeField] Button soundButton;
+    [SerializeField] Sprite soundImageOn;
+    [SerializeField] Sprite soundImageOff;
+    private bool soundOn = true;
 
     private void Start()
     {
@@ -32,6 +39,7 @@ public class Game : MonoBehaviour
     {
         CounterValue += ClickPower;
         evolution.Evolve();
+        audioSource.PlayOneShot(tapSound);
     }
     private void Update()
     {
@@ -51,7 +59,21 @@ public class Game : MonoBehaviour
             accumulatedTime -= (float)wholeNumbers;
         }
 
-        CounterText.text = $"{numberFormatter.FormatNumber(CounterValue)} <sprite=0>";
+        CounterText.text = $"{numberFormatter.FormatCounterNumber(CounterValue)} <sprite=0>";
         IncomeText.text = $"{numberFormatter.FormatNumber(IncomePerSecond)} <sprite=0> в сек.";
+    }
+
+    public void ToggleSound()
+    {
+        if (soundOn)
+        {
+            audioSource.gameObject.SetActive(false);
+        }
+        else
+        {
+            audioSource.gameObject.SetActive(true);
+        }
+        soundOn = !soundOn;
+        soundButton.image.sprite = soundOn ? soundImageOn : soundImageOff;
     }
 }
