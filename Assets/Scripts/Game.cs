@@ -4,9 +4,11 @@ using System.Numerics;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using YG;
 
 public class Game : MonoBehaviour
 {
+    [Header("Main")]
     [SerializeField] private TMP_Text CounterText;
     [SerializeField] private TMP_Text IncomeText;
 
@@ -17,6 +19,7 @@ public class Game : MonoBehaviour
 
     private Evolution evolution;
     private NumberFormatter numberFormatter = new NumberFormatter();
+
     [Header("Sound Stuff")]
     [SerializeField] AudioSource audioSource;
     [SerializeField] AudioClip tapSound;
@@ -24,6 +27,10 @@ public class Game : MonoBehaviour
     [SerializeField] Sprite soundImageOn;
     [SerializeField] Sprite soundImageOff;
     private bool soundOn = true;
+
+    [Header("Localization")]
+    [SerializeField] private Button ruLanguageButton;
+    [SerializeField] private Button enLanguageButton;
 
     private void Start()
     {
@@ -40,13 +47,14 @@ public class Game : MonoBehaviour
         CounterValue += ClickPower;
         evolution.Evolve();
         audioSource.PlayOneShot(tapSound);
+        //DropDiamondsEffect()
+        //ShowClickNumbers()
     }
     private void Update()
     {
         // Accumulate the time
         accumulatedTime += (float)IncomePerSecond * Time.deltaTime;
 
-        // Check if the accumulated time is greater than or equal to 1
         if (accumulatedTime >= 1f)
         {
             // Calculate how many whole numbers we have accumulated
@@ -60,7 +68,16 @@ public class Game : MonoBehaviour
         }
 
         CounterText.text = $"{numberFormatter.FormatCounterNumber(CounterValue)} <sprite=0>";
-        IncomeText.text = $"{numberFormatter.FormatNumber(IncomePerSecond)} <sprite=0> в сек.";
+        if (YandexGame.lang == "ru")
+        {
+            IncomeText.text = $"{numberFormatter.FormatNumber(IncomePerSecond)} <sprite=0> в сек.";
+        }
+        else
+        {
+            IncomeText.text = $"{numberFormatter.FormatNumber(IncomePerSecond)} <sprite=0> per sec.";
+        }
+        //if Language Button is pressed
+        ChangeLanguageButton();
     }
 
     public void ToggleSound()
@@ -75,5 +92,19 @@ public class Game : MonoBehaviour
         }
         soundOn = !soundOn;
         soundButton.image.sprite = soundOn ? soundImageOn : soundImageOff;
+    }
+
+    private void ChangeLanguageButton()
+    {
+        if(YandexGame.lang == "en")
+        {
+            enLanguageButton.gameObject.SetActive(true);
+            ruLanguageButton.gameObject.SetActive(false);
+        }
+        else
+        {
+            ruLanguageButton.gameObject.SetActive(true);
+            enLanguageButton.gameObject.SetActive(false);
+        }
     }
 }

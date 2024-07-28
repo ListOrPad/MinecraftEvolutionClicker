@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using YG;
 
 public class Evolution : MonoBehaviour
 {
@@ -18,11 +19,24 @@ public class Evolution : MonoBehaviour
         creature = GameObject.Find("Creature");
         creature.GetComponent<Image>().sprite = creatureSprites[level];
         expBar.value = 0;
-        levelText.text = "1 уровень";
+        if(YandexGame.lang == "ru")
+            levelText.text = "1 уровень";
+        else
+            levelText.text = "1 level";
+
     }
+
+    private void Update()
+    {
+        if (YandexGame.lang == "ru")
+            levelText.text = $"{level + 1} уровень";
+        else
+            levelText.text = $"{level + 1} level";
+    }
+
     public void Evolve()
     {
-        expBar.value += 1;
+        expBar.value += 100;
 
         if (LvlUp())
         {
@@ -35,7 +49,6 @@ public class Evolution : MonoBehaviour
             {
                 creature.GetComponent<Image>().sprite = creatureSprites[level];
             }
-            levelText.text = $"{level + 1} уровень";
         }
     }
     private bool LvlUp()
@@ -47,7 +60,10 @@ public class Evolution : MonoBehaviour
         else if (creatureSprites.Length == level)
         {
             expBar.value = expBar.maxValue;
-            levelText.text = $"максимальный уровень";
+            if(YandexGame.lang == "ru")
+                levelText.text = $"максимальный уровень";
+            else
+                levelText.text = $"max level";
         }
         return false;
     }

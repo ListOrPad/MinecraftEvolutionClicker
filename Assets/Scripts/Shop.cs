@@ -19,6 +19,7 @@ public class Shop : MonoBehaviour
         (BigInteger) fiftyBillion, (BigInteger) oneTrillion, (BigInteger) tenTrillion, (BigInteger) twoHundredFiftyTrillion,
         (BigInteger) twoQuadrillion, (BigInteger)fiveQuadrillion };
 
+    //Prices of upgrades
     private const double oneMillion = 1_000_000;
     private const double tenMillion = 10_000_000;
     private const double fifteenMillion = 15_000_000;
@@ -73,6 +74,7 @@ public class Shop : MonoBehaviour
             {
                 Game.ClickPower += GetUpgrade(upgradeID).clickUpgradeValue;
             }
+
             //play purchase sound
             audioSource.PlayOneShot(buySuccessSound);
         }
@@ -85,6 +87,7 @@ public class Shop : MonoBehaviour
         return upgradeList[upgradeId];
     }
 
+    //How much power will upgrade increase
     private void SetValuesOfUpgrades()
     {
         upgradeList[0].idleUpgradeValue = 1;
