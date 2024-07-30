@@ -28,27 +28,28 @@ public class Evolution : MonoBehaviour
 
     private void Update()
     {
-        if (YandexGame.lang == "ru")
-            levelText.text = $"{level + 1} уровень";
-        else
-            levelText.text = $"{level + 1} level";
+        WriteLvl();
     }
 
-    public void Evolve()
+    public void CreatureClick()
     {
-        expBar.value += 100;
-
+        expBar.value += 1;
         if (LvlUp())
         {
-            expBar.value = 0;
-            expBar.maxValue += 100;
+            Evolve();
+        }
+    }
 
-            level += 1;
+    private void Evolve()
+    {
+        expBar.value = 0;
+        expBar.maxValue += 100;
 
-            if (level < creatureSprites.Length) // Ensure we have a sprite for the next level
-            {
-                creature.GetComponent<Image>().sprite = creatureSprites[level];
-            }
+        level += 1;
+
+        if (level < creatureSprites.Length) // Ensure we have a sprite for the next level
+        {
+            creature.GetComponent<Image>().sprite = creatureSprites[level];
         }
     }
     private bool LvlUp()
@@ -60,11 +61,52 @@ public class Evolution : MonoBehaviour
         else if (creatureSprites.Length == level)
         {
             expBar.value = expBar.maxValue;
-            if(YandexGame.lang == "ru")
+        }
+        return false;
+    }
+
+    /// <summary>
+    /// adds +20% to the exp bar as a reward for watching rewarding ad
+    /// </summary>
+    public void AdRewardedExperience()
+    {
+        //+20% exp of max value
+        float rewardedExperience = expBar.maxValue / 100 * 20;
+
+        float sum = expBar.value + rewardedExperience;
+        float delta = sum - expBar.maxValue;
+       
+        if (sum >= expBar.maxValue && creatureSprites.Length > level)
+        {
+            Evolve();
+            expBar.value += delta;
+        }
+        else if (creatureSprites.Length > level)
+        {
+            expBar.value += rewardedExperience;
+        }
+        else if (creatureSprites.Length == level)
+        {
+            expBar.value = expBar.maxValue;
+        }
+    }
+
+    private void WriteLvl()
+    {
+        if (YandexGame.lang == "ru" && creatureSprites.Length > level)
+        {
+            levelText.text = $"{level + 1} уровень";
+        }
+        else if (YandexGame.lang == "en" && creatureSprites.Length > level)
+        {
+            levelText.text = $"{level + 1} level";
+        }
+        else if (creatureSprites.Length == level)
+        {
+            if (YandexGame.lang == "ru")
                 levelText.text = $"максимальный уровень";
             else
                 levelText.text = $"max level";
         }
-        return false;
     }
 }

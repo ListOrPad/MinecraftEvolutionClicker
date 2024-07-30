@@ -23,6 +23,7 @@ public class Game : MonoBehaviour
     [Header("Sound Stuff")]
     [SerializeField] AudioSource audioSource;
     [SerializeField] AudioClip tapSound;
+    [SerializeField] AudioClip rewAdSound;
     [SerializeField] Button soundButton;
     [SerializeField] Sprite soundImageOn;
     [SerializeField] Sprite soundImageOff;
@@ -45,7 +46,7 @@ public class Game : MonoBehaviour
     public void Click()
     {
         CounterValue += ClickPower;
-        evolution.Evolve();
+        evolution.CreatureClick();
         audioSource.PlayOneShot(tapSound);
         //DropDiamondsEffect()
         //ShowClickNumbers()
@@ -67,7 +68,9 @@ public class Game : MonoBehaviour
             accumulatedTime -= (float)wholeNumbers;
         }
 
+        //text for counter
         CounterText.text = $"{numberFormatter.FormatCounterNumber(CounterValue)} <sprite=0>";
+        //text for income per sec
         if (YandexGame.lang == "ru")
         {
             IncomeText.text = $"{numberFormatter.FormatNumber(IncomePerSecond)} <sprite=0> в сек.";
@@ -76,6 +79,7 @@ public class Game : MonoBehaviour
         {
             IncomeText.text = $"{numberFormatter.FormatNumber(IncomePerSecond)} <sprite=0> per sec.";
         }
+
         //if Language Button is pressed
         ChangeLanguageButton();
     }
@@ -107,4 +111,41 @@ public class Game : MonoBehaviour
             enLanguageButton.gameObject.SetActive(false);
         }
     }
+
+    #region rewarded ad
+    private void DoubleDiamondsForAd()
+    {
+        CounterValue *= 2;
+    }
+
+    // Подписываемся на событие открытия рекламы в OnEnable
+    private void OnEnable()
+    {
+        YandexGame.RewardVideoEvent += Rewarded;
+    }
+
+    // Отписываемся от события открытия рекламы в OnDisable
+    private void OnDisable()
+    {
+        YandexGame.RewardVideoEvent -= Rewarded;
+    }
+
+    // Подписанный метод получения награды
+    private void Rewarded(int id)
+    {
+        if (id == 1)
+            DoubleDiamondsForAd();
+        else if (id == 2)
+            evolution.AdRewardedExperience();
+
+        audioSource.PlayOneShot(rewAdSound);
+    }
+
+    // Метод для вызова видео рекламы
+    public void ExampleOpenRewardAd(int id)
+    {
+        // Вызываем метод открытия видео рекламы
+        YandexGame.RewVideoShow(id);
+    }
+    #endregion
 }
