@@ -12,6 +12,10 @@ public class Game : MonoBehaviour
     [SerializeField] private TMP_Text CounterText;
     [SerializeField] private TMP_Text IncomeText;
 
+    [SerializeField] private GameObject fadingNumbersObject;
+    [SerializeField] private GameObject spawnClickObject;
+    private Transform fadeAwayText;
+
     public static BigInteger CounterValue { get; set; }
     public static BigInteger ClickPower;
     public static BigInteger IncomePerSecond;
@@ -42,14 +46,28 @@ public class Game : MonoBehaviour
         ClickPower = 1;
 
         evolution = GetComponent<Evolution>();
+        fadeAwayText = GameObject.Find("FadeAwayText").GetComponent<Transform>();
     }
     public void Click()
     {
         CounterValue += ClickPower;
         evolution.CreatureClick();
         audioSource.PlayOneShot(tapSound);
-        //DropDiamondsEffect()
-        //ShowClickNumbers()
+        DropDiamondsEffect();
+        ShowClickNumbers();
+    }
+
+    private void ShowClickNumbers()
+    {
+        Instantiate(fadingNumbersObject, fadeAwayText);
+    }
+    private void DropDiamondsEffect()
+    {
+        UnityEngine.Vector3 pos = Input.mousePosition;
+        UnityEngine.Vector3 offset = new UnityEngine.Vector3(0, 0, 10);
+        GameObject spawnedObjects = Instantiate(spawnClickObject, pos + offset, UnityEngine.Quaternion.identity);
+        spawnedObjects.transform.SetParent(GameObject.Find("Spawned Click Objects").transform);
+        Destroy(spawnedObjects, 1);
     }
     private void Update()
     {
