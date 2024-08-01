@@ -2,11 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Numerics;
 using UnityEngine;
+using YG;
 using UnityEngine.UI;
 
 public class Shop : MonoBehaviour
 {
     private NumberFormatter numberFormatter = new NumberFormatter();
+    private YandexGame YG = new YandexGame();
 
     [Header("Sound Stuff")]
     [SerializeField] private AudioSource audioSource;
@@ -56,11 +58,6 @@ public class Shop : MonoBehaviour
             upgradeList[i] = new Upgrade(i);
             upgradeList[i].Cost = upgradeCosts[i];
             upgradePrefabList[i].upgradeCostText.text = numberFormatter.FormatNumber(upgradeCosts[i]) + " <sprite=0>";
-
-            //save hidden text before changing it to '???'
-            hiddenCosts.Add(upgradePrefabList[i].upgradeCostText.text);
-            hiddenNames.Add(upgradePrefabList[i].upgradeNameText.text);
-            hiddenUpgradeValues.Add(upgradePrefabList[i].upgradeValueText.text);
         }
 
         upgradeList[0].wasUpgradeBought = true;
@@ -72,15 +69,30 @@ public class Shop : MonoBehaviour
     /// </summary>
     private void ConcealUpgrades()
     {
-
+        //save hidden text before changing it to '???'
         for (int i = 0; i < upgradePrefabList.Length; i++)
         {
+            if (YandexGame.lang == "ru")
+            {
+                hiddenCosts.Add(upgradePrefabList[i].upgradeCostText.text);
+                hiddenNames.Add(upgradePrefabList[i].upgradeNameText.text);
+                hiddenUpgradeValues.Add(upgradePrefabList[i].upgradeValueText.text);
+            }
+            else
+            {
+                if (YandexGame.lang != "en")
+                {
+                    YG._SwitchLanguage("en");
+                }
+                hiddenCosts.Add(upgradePrefabList[i].upgradeCostText.text);
+                hiddenNames.Add(upgradePrefabList[i].upgradeNameText.text);
+                hiddenUpgradeValues.Add(upgradePrefabList[i].upgradeValueText.text);
+            }
             
         }
 
         for (int i = 1; i < upgradePrefabList.Length; i++)
         {
-
             //if buy of specific upgrade wasn't purchased, then...
             if (!upgradeList[i - 1].wasUpgradeBought)
             {
@@ -118,6 +130,9 @@ public class Shop : MonoBehaviour
                 upgradePrefabList[i].upgradePicture.color = new Color(1, 1, 1, 1);
             }
         }
+        hiddenCosts.Clear();
+        hiddenNames.Clear();
+        hiddenUpgradeValues.Clear();
     }
 
     private void DimExpensiveUpgrades()
