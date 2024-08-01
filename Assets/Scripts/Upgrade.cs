@@ -16,20 +16,12 @@ public class Upgrade
     public bool isIdleUpgrade { get; set; } = true;
     public bool wasUpgradeBought { get; set; } = false;
 
-    private bool isUpgradeAvailable()
+    public bool isUpgradeExpensive()
     {
         if (Cost > Game.CounterValue)
         {
             return false;
         }
         return true;
-    }
-
-    private void Update()
-    {
-        if (!isUpgradeAvailable())
-        {
-            
-        }
     }
 }

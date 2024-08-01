@@ -44,6 +44,7 @@ public class Shop : MonoBehaviour
     private void Update()
     {
         ConcealUpgrades();
+        DimExpensiveUpgrades();
     }
 
     private void InitializeUpgrades()
@@ -55,6 +56,11 @@ public class Shop : MonoBehaviour
             upgradeList[i] = new Upgrade(i);
             upgradeList[i].Cost = upgradeCosts[i];
             upgradePrefabList[i].upgradeCostText.text = numberFormatter.FormatNumber(upgradeCosts[i]) + " <sprite=0>";
+
+            //save hidden text before changing it to '???'
+            hiddenCosts.Add(upgradePrefabList[i].upgradeCostText.text);
+            hiddenNames.Add(upgradePrefabList[i].upgradeNameText.text);
+            hiddenUpgradeValues.Add(upgradePrefabList[i].upgradeValueText.text);
         }
 
         upgradeList[0].wasUpgradeBought = true;
@@ -69,10 +75,7 @@ public class Shop : MonoBehaviour
 
         for (int i = 0; i < upgradePrefabList.Length; i++)
         {
-            //save hidden text before changing it to '???'
-            hiddenCosts.Add(upgradePrefabList[i].upgradeCostText.text);
-            hiddenNames.Add(upgradePrefabList[i].upgradeNameText.text);
-            hiddenUpgradeValues.Add(upgradePrefabList[i].upgradeValueText.text);
+            
         }
 
         for (int i = 1; i < upgradePrefabList.Length; i++)
@@ -117,8 +120,26 @@ public class Shop : MonoBehaviour
         }
     }
 
-
-
+    private void DimExpensiveUpgrades()
+    {
+        for (int i = 0; i < upgradePrefabList.Length; i++)
+        {
+            if (!upgradeList[i].isUpgradeExpensive())
+            {
+                upgradePrefabList[i].UpgradeBackgroundImage.color = new Color32(195, 195, 195, 255);
+                upgradePrefabList[i].upgradeCostText.color = new Color32(255, 103, 74, 255);
+                upgradePrefabList[i].upgradeNameText.color = new Color32(132,181,0, 255);
+                upgradePrefabList[i].upgradeValueText.color = new Color32(176, 118, 95, 255);
+            }
+            else
+            {
+                upgradePrefabList[i].UpgradeBackgroundImage.color = new Color(1, 1, 1, 1);
+                upgradePrefabList[i].upgradeCostText.color = new Color32(73, 207, 255, 255);
+                upgradePrefabList[i].upgradeNameText.color = new Color32(187, 255, 0, 255);
+                upgradePrefabList[i].upgradeValueText.color = new Color32(228, 174, 152, 255);
+            }
+        }
+    }
 
     /// <summary>
     /// set to onClick event of the upgrade button
