@@ -417,7 +417,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f3aa6f3402d354419fec0cfd90adf20, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  UpgradeCostText: {fileID: 6313280253832303263}
+  UpgradeButton: {fileID: 4643793382355111309}
+  UpgradeBackgroundImage: {fileID: 3313219272231465616}
+  upgradeCostText: {fileID: 6313280253832303263}
+  upgradeNameText: {fileID: 4342744777482644020}
+  upgradeValueText: {fileID: 5752623196718361295}
+  upgradePicture: {fileID: 8485092879808839582}
 --- !u!1 &5714144832806994488
 GameObject:
   m_ObjectHideFlags: 0

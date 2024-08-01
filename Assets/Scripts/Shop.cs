@@ -32,9 +32,18 @@ public class Shop : MonoBehaviour
     private const double twoQuadrillion = 2_000_000_000_000_000;
     private const double fiveQuadrillion = 5_000_000_000_000_000;
 
+    //hiding
+    private List<string> hiddenNames = new List<string>();
+    private List<string> hiddenCosts = new List<string>();
+    private List<string> hiddenUpgradeValues = new List<string>();
+
     private void Start()
     {
         InitializeUpgrades();
+    }
+    private void Update()
+    {
+        ConcealUpgrades();
     }
 
     private void InitializeUpgrades()
@@ -45,11 +54,71 @@ public class Shop : MonoBehaviour
         {
             upgradeList[i] = new Upgrade(i);
             upgradeList[i].Cost = upgradeCosts[i];
-            upgradePrefabList[i].UpgradeCostText.text = numberFormatter.FormatNumber(upgradeCosts[i]) + " <sprite=0>";
+            upgradePrefabList[i].upgradeCostText.text = numberFormatter.FormatNumber(upgradeCosts[i]) + " <sprite=0>";
         }
 
+        upgradeList[0].wasUpgradeBought = true;
         SetValuesOfUpgrades();
     }
+
+    /// <summary>
+    /// Conceals upgrade until previous one is bought
+    /// </summary>
+    private void ConcealUpgrades()
+    {
+
+        for (int i = 0; i < upgradePrefabList.Length; i++)
+        {
+            //save hidden text before changing it to '???'
+            hiddenCosts.Add(upgradePrefabList[i].upgradeCostText.text);
+            hiddenNames.Add(upgradePrefabList[i].upgradeNameText.text);
+            hiddenUpgradeValues.Add(upgradePrefabList[i].upgradeValueText.text);
+        }
+
+        for (int i = 1; i < upgradePrefabList.Length; i++)
+        {
+
+            //if buy of specific upgrade wasn't purchased, then...
+            if (!upgradeList[i - 1].wasUpgradeBought)
+            {
+                //change data to hidden
+                upgradePrefabList[i].UpgradeButton.interactable = false;
+
+                upgradePrefabList[i].UpgradeBackgroundImage.color = new Color32(80, 130, 125, 255);
+
+                upgradePrefabList[i].upgradeCostText.text = "???";
+                upgradePrefabList[i].upgradeCostText.color = new Color(0, 0, 0, 1);
+
+                upgradePrefabList[i].upgradeNameText.text = "????????????";
+                upgradePrefabList[i].upgradeNameText.color = new Color(0, 0, 0, 1);
+
+                upgradePrefabList[i].upgradeValueText.text = "???????????????????????";
+                upgradePrefabList[i].upgradeValueText.color = new Color(0, 0, 0, 1);
+
+                upgradePrefabList[i].upgradePicture.color = new Color(0, 0, 0, 1);
+            }
+            else //get data back to normal
+            {
+                upgradePrefabList[i].UpgradeButton.interactable = true;
+
+                upgradePrefabList[i].UpgradeBackgroundImage.color = new Color32(255, 255, 255, 255);
+
+                upgradePrefabList[i].upgradeCostText.text = hiddenCosts[i];
+                upgradePrefabList[i].upgradeCostText.color = new Color32(73, 207, 255, 255);
+
+                upgradePrefabList[i].upgradeNameText.text = hiddenNames[i];
+                upgradePrefabList[i].upgradeNameText.color = new Color32(186, 255, 0, 255);
+
+                upgradePrefabList[i].upgradeValueText.text = hiddenUpgradeValues[i];
+                upgradePrefabList[i].upgradeValueText.color = new Color32(229, 174, 152, 255);
+
+                upgradePrefabList[i].upgradePicture.color = new Color(1, 1, 1, 1);
+            }
+        }
+    }
+
+
+
 
     /// <summary>
     /// set to onClick event of the upgrade button
@@ -75,6 +144,7 @@ public class Shop : MonoBehaviour
                 Game.ClickPower += GetUpgrade(upgradeID).clickUpgradeValue;
             }
 
+            GetUpgrade(upgradeID).wasUpgradeBought = true;
             //play purchase sound
             audioSource.PlayOneShot(buySuccessSound);
         }

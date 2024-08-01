@@ -14,7 +14,7 @@ public class Upgrade
 
     private int upradeID;
     public bool isIdleUpgrade { get; set; } = true;
-    private bool isUpgradeShown;
+    public bool wasUpgradeBought { get; set; } = false;
 
     private bool isUpgradeAvailable()
     {
@@ -29,7 +29,7 @@ public class Upgrade
     {
         if (!isUpgradeAvailable())
         {
-
+            
         }
     }
 }
