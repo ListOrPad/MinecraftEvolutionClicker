@@ -8,7 +8,7 @@ using UnityEngine.UI;
 public class Shop : MonoBehaviour
 {
     private NumberFormatter numberFormatter = new NumberFormatter();
-    private YandexGame YG = new YandexGame();
+    private YandexGame YG;
 
     [Header("Sound Stuff")]
     [SerializeField] private AudioSource audioSource;
@@ -38,10 +38,16 @@ public class Shop : MonoBehaviour
     private List<string> hiddenNames = new List<string>();
     private List<string> hiddenCosts = new List<string>();
     private List<string> hiddenUpgradeValues = new List<string>();
+    private List<string> hiddenNamesEn = new List<string>();
+    private List<string> hiddenCostsEn = new List<string>();
+    private List<string> hiddenUpgradeValuesEn = new List<string>();
 
     private void Start()
     {
+        YG = GameObject.Find("YandexGame").GetComponent<YandexGame>();
+
         InitializeUpgrades();
+        SaveHiddenData();
     }
     private void Update()
     {
@@ -69,31 +75,9 @@ public class Shop : MonoBehaviour
     /// </summary>
     private void ConcealUpgrades()
     {
-        //save hidden text before changing it to '???'
-        for (int i = 0; i < upgradePrefabList.Length; i++)
-        {
-            if (YandexGame.lang == "ru")
-            {
-                hiddenCosts.Add(upgradePrefabList[i].upgradeCostText.text);
-                hiddenNames.Add(upgradePrefabList[i].upgradeNameText.text);
-                hiddenUpgradeValues.Add(upgradePrefabList[i].upgradeValueText.text);
-            }
-            else
-            {
-                if (YandexGame.lang != "en")
-                {
-                    YG._SwitchLanguage("en");
-                }
-                hiddenCosts.Add(upgradePrefabList[i].upgradeCostText.text);
-                hiddenNames.Add(upgradePrefabList[i].upgradeNameText.text);
-                hiddenUpgradeValues.Add(upgradePrefabList[i].upgradeValueText.text);
-            }
-            
-        }
-
         for (int i = 1; i < upgradePrefabList.Length; i++)
         {
-            //if buy of specific upgrade wasn't purchased, then...
+            //if a buy of specific upgrade wasn't purchased, then...
             if (!upgradeList[i - 1].wasUpgradeBought)
             {
                 //change data to hidden
@@ -104,15 +88,15 @@ public class Shop : MonoBehaviour
                 upgradePrefabList[i].upgradeCostText.text = "???";
                 upgradePrefabList[i].upgradeCostText.color = new Color(0, 0, 0, 1);
 
-                upgradePrefabList[i].upgradeNameText.text = "????????????";
+                upgradePrefabList[i].upgradeNameText.text = "??????????";
                 upgradePrefabList[i].upgradeNameText.color = new Color(0, 0, 0, 1);
 
-                upgradePrefabList[i].upgradeValueText.text = "???????????????????????";
+                upgradePrefabList[i].upgradeValueText.text = "????????????????????";
                 upgradePrefabList[i].upgradeValueText.color = new Color(0, 0, 0, 1);
 
                 upgradePrefabList[i].upgradePicture.color = new Color(0, 0, 0, 1);
             }
-            else //get data back to normal
+            else if (YandexGame.lang == "ru") //get data back to normal
             {
                 upgradePrefabList[i].UpgradeButton.interactable = true;
 
@@ -129,10 +113,42 @@ public class Shop : MonoBehaviour
 
                 upgradePrefabList[i].upgradePicture.color = new Color(1, 1, 1, 1);
             }
+            else //get data back to normal Eng
+            {
+                upgradePrefabList[i].UpgradeButton.interactable = true;
+
+                upgradePrefabList[i].UpgradeBackgroundImage.color = new Color32(255, 255, 255, 255);
+
+                upgradePrefabList[i].upgradeCostText.text = hiddenCostsEn[i];
+                upgradePrefabList[i].upgradeCostText.color = new Color32(73, 207, 255, 255);
+
+                upgradePrefabList[i].upgradeNameText.text = hiddenNamesEn[i];
+                upgradePrefabList[i].upgradeNameText.color = new Color32(186, 255, 0, 255);
+
+                upgradePrefabList[i].upgradeValueText.text = hiddenUpgradeValuesEn[i];
+                upgradePrefabList[i].upgradeValueText.color = new Color32(229, 174, 152, 255);
+
+                upgradePrefabList[i].upgradePicture.color = new Color(1, 1, 1, 1);
+            }
         }
-        hiddenCosts.Clear();
-        hiddenNames.Clear();
-        hiddenUpgradeValues.Clear();
+    }
+
+    private void SaveHiddenData()
+    {
+        //save hidden text before changing it to '???'
+        for (int i = 0; i < upgradePrefabList.Length; i++)
+        {
+            hiddenCosts.Add(upgradePrefabList[i].upgradeCostText.text);
+            hiddenNames.Add(upgradePrefabList[i].upgradeNameText.text);
+            hiddenUpgradeValues.Add(upgradePrefabList[i].upgradeValueText.text);
+            
+            YG._SwitchLanguage("en");
+            hiddenCostsEn.Add(upgradePrefabList[i].upgradeCostText.text);
+            hiddenNamesEn.Add(upgradePrefabList[i].upgradeNameText.text);
+            hiddenUpgradeValuesEn.Add(upgradePrefabList[i].upgradeValueText.text);
+
+            YG._SwitchLanguage("ru");
+        }
     }
 
     private void DimExpensiveUpgrades()
