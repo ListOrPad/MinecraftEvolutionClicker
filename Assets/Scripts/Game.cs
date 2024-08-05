@@ -39,11 +39,9 @@ public class Game : MonoBehaviour
 
     private void Start()
     {
-        IncomePerSecond = 0;
+        //those two lines probably should be deleted, this text is handled in update
         CounterText.text = "0 <sprite=0>";
         IncomeText.text = "1 <sprite=0> в сек.";
-        CounterValue = 0;
-        ClickPower = 1;
 
         evolution = GetComponent<Evolution>();
         fadeAwayText = GameObject.Find("FadeAwayText").GetComponent<Transform>();

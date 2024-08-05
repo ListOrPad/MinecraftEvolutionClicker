@@ -7,18 +7,16 @@ using YG;
 
 public class Evolution : MonoBehaviour
 {
-    [SerializeField] private Slider expBar;
+    [SerializeField] public Slider expBar;
     [SerializeField] private TMP_Text levelText;
-    [SerializeField] private Sprite[] creatureSprites;
-    private int level;
+    [SerializeField] public Sprite[] creatureSprites;
+    [HideInInspector] public int level;
     private GameObject creature;
 
     private void Start()
     {
-        level = 0;
         creature = GameObject.Find("Creature");
         creature.GetComponent<Image>().sprite = creatureSprites[level];
-        expBar.value = 0;
         if(YandexGame.lang == "ru")
             levelText.text = "1 уровень";
         else

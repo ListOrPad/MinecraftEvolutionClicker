@@ -14,7 +14,7 @@ public class Upgrade
 
     private int upradeID;
     public bool isIdleUpgrade { get; set; } = true;
-    public bool wasUpgradeBought { get; set; } = false;
+    public bool wasUpgradeBought { get; set; }
 
     public bool isUpgradeExpensive()
     {

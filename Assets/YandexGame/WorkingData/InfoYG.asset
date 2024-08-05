@@ -31,9 +31,9 @@ MonoBehaviour:
   loadAdWithDelaySimulation: 0.1
   testErrorOfRewardedAdsInEditor: 0
   saveCloud: 1
-  flush: 0
+  flush: 1
   localSaveSync: 1
-  saveCloudInterval: 5
+  saveCloudInterval: 0
   saveOnQuitGame: 1
   quitGameParameters:
     objectName: YandexGame

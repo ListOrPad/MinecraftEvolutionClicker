@@ -10,12 +10,14 @@ public class Shop : MonoBehaviour
     private NumberFormatter numberFormatter = new NumberFormatter();
     private YandexGame YG;
 
+    [SerializeField]private GameObject resetButton;
+
     [Header("Sound Stuff")]
     [SerializeField] private AudioSource audioSource;
     [SerializeField] private AudioClip buySuccessSound;
 
     private UpgradePrefab[] upgradePrefabList = new UpgradePrefab[16];
-    private List<Upgrade> upgradeList = new List<Upgrade>( new Upgrade[16] );
+    public List<Upgrade> upgradeList { get; set; } = new List<Upgrade>(new Upgrade[16]);
     private List<BigInteger> upgradeCosts = new List<BigInteger>{ 15, 40, 1500, 4750, 110000, (BigInteger)oneMillion,
         (BigInteger)tenMillion, (BigInteger)fifteenMillion, (BigInteger) sevenHundredMillion, (BigInteger) threeBillion,
         (BigInteger) fiftyBillion, (BigInteger) oneTrillion, (BigInteger) tenTrillion, (BigInteger) twoHundredFiftyTrillion,
@@ -61,7 +63,7 @@ public class Shop : MonoBehaviour
         upgradePrefabList = GameObject.Find("Upgrades").GetComponentsInChildren<UpgradePrefab>();
         for (int i = 0; i < upgradePrefabList.Length; i++)
         {
-            upgradeList[i] = new Upgrade(i);
+            upgradeList[i] = YandexGame.savesData.upgrades[i];
             upgradeList[i].Cost = upgradeCosts[i];
             upgradePrefabList[i].upgradeCostText.text = numberFormatter.FormatNumber(upgradeCosts[i]) + " <sprite=0>";
         }
@@ -199,14 +201,26 @@ public class Shop : MonoBehaviour
             GetUpgrade(upgradeID).wasUpgradeBought = true;
             //play purchase sound
             audioSource.PlayOneShot(buySuccessSound);
+            //if the last update was bought:
+            RevealResetButton();
         }
     }
 
-   
+   private void RevealResetButton()
+    {
+        if(GetUpgrade(15).wasUpgradeBought)
+        {
+            resetButton.gameObject.SetActive(true);
+        }
+    }
 
     private Upgrade GetUpgrade(int upgradeId)
     {
         return upgradeList[upgradeId];
+    }
+    public List<Upgrade> GetUpgradeListForSave() //currently i don't need this code
+    {
+        return upgradeList;
     }
 
     //How much power will upgrade increase
