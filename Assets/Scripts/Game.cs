@@ -25,13 +25,9 @@ public class Game : MonoBehaviour
     private NumberFormatter numberFormatter = new NumberFormatter();
 
     [Header("Sound Stuff")]
-    [SerializeField] AudioSource audioSource;
     [SerializeField] AudioClip tapSound;
     [SerializeField] AudioClip rewAdSound;
-    [SerializeField] Button soundButton;
-    [SerializeField] Sprite soundImageOn;
-    [SerializeField] Sprite soundImageOff;
-    private bool soundOn = true;
+    
 
     [Header("Localization")]
     [SerializeField] private Button ruLanguageButton;
@@ -50,7 +46,7 @@ public class Game : MonoBehaviour
     {
         CounterValue += ClickPower;
         evolution.CreatureClick();
-        audioSource.PlayOneShot(tapSound);
+        SoundManager.Instance.PlaySound(tapSound);
         DropDiamondsEffect();
         ShowClickNumbers();
     }
@@ -100,19 +96,7 @@ public class Game : MonoBehaviour
         ChangeLanguageButton();
     }
 
-    public void ToggleSound()
-    {
-        if (soundOn)
-        {
-            audioSource.gameObject.SetActive(false);
-        }
-        else
-        {
-            audioSource.gameObject.SetActive(true);
-        }
-        soundOn = !soundOn;
-        soundButton.image.sprite = soundOn ? soundImageOn : soundImageOff;
-    }
+    
 
     private void ChangeLanguageButton()
     {
@@ -154,7 +138,7 @@ public class Game : MonoBehaviour
         else if (id == 2)
             evolution.AdRewardedExperience();
 
-        audioSource.PlayOneShot(rewAdSound);
+        SoundManager.Instance.PlaySound(rewAdSound);
     }
 
     // Ìועמה הכÿ גûחמגא גטהומ נוךכאלû

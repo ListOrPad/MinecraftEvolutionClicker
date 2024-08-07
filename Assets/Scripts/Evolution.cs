@@ -7,6 +7,7 @@ using YG;
 
 public class Evolution : MonoBehaviour
 {
+    [SerializeField] private AudioClip lvlUpSound;
     [SerializeField] public Slider expBar;
     [SerializeField] private TMP_Text levelText;
     [SerializeField] public Sprite[] creatureSprites;
@@ -16,16 +17,11 @@ public class Evolution : MonoBehaviour
     private void Start()
     {
         creature = GameObject.Find("Creature");
-        creature.GetComponent<Image>().sprite = creatureSprites[level];
-        if(YandexGame.lang == "ru")
-            levelText.text = "1 уровень";
-        else
-            levelText.text = "1 level";
-
     }
 
     private void Update()
     {
+        creature.GetComponent<Image>().sprite = creatureSprites[level];
         WriteLvl();
     }
 
@@ -49,6 +45,8 @@ public class Evolution : MonoBehaviour
         {
             creature.GetComponent<Image>().sprite = creatureSprites[level];
         }
+
+        SoundManager.Instance.PlaySound(lvlUpSound);
     }
     private bool LvlUp()
     {

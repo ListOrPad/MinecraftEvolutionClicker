@@ -3,8 +3,7 @@ using System.Collections.Generic;
 using System.Numerics;
 using UnityEngine;
 using YG;
-using UnityEngine.UI;
-
+using System.Linq;
 public class Shop : MonoBehaviour
 {
     private NumberFormatter numberFormatter = new NumberFormatter();
@@ -13,7 +12,6 @@ public class Shop : MonoBehaviour
     [SerializeField]private GameObject resetButton;
 
     [Header("Sound Stuff")]
-    [SerializeField] private AudioSource audioSource;
     [SerializeField] private AudioClip buySuccessSound;
 
     private UpgradePrefab[] upgradePrefabList = new UpgradePrefab[16];
@@ -200,7 +198,7 @@ public class Shop : MonoBehaviour
 
             GetUpgrade(upgradeID).wasUpgradeBought = true;
             //play purchase sound
-            audioSource.PlayOneShot(buySuccessSound);
+            SoundManager.Instance.PlaySound(buySuccessSound);
             //if the last update was bought:
             RevealResetButton();
         }
@@ -208,7 +206,7 @@ public class Shop : MonoBehaviour
 
    private void RevealResetButton()
     {
-        if(GetUpgrade(15).wasUpgradeBought)
+        if(upgradeList.Last().wasUpgradeBought)
         {
             resetButton.gameObject.SetActive(true);
         }
@@ -218,7 +216,7 @@ public class Shop : MonoBehaviour
     {
         return upgradeList[upgradeId];
     }
-    public List<Upgrade> GetUpgradeListForSave() //currently i don't need this code
+    public List<Upgrade> GetUpgradeListForSave()
     {
         return upgradeList;
     }
