@@ -8,9 +8,13 @@ public class MySaver : MonoBehaviour
 {
     Evolution evolution;
     Shop shop;
+    private Coroutine myCoroutine;
     // Подписываемся на событие GetDataEvent в OnEnable
     private void OnEnable()
     {
+        evolution = GameObject.Find("Game").GetComponent<Evolution>();
+        shop = GameObject.Find("Game").GetComponent<Shop>();
+
         YandexGame.GetDataEvent += GetLoad;
     }
 
@@ -22,9 +26,6 @@ public class MySaver : MonoBehaviour
 
     private void Start()
     {
-        evolution = GameObject.Find("Game").GetComponent<Evolution>();
-        shop = GameObject.Find("Game").GetComponent<Shop>();
-
         if (YandexGame.SDKEnabled == true)
         {
             GetLoad();
@@ -60,8 +61,9 @@ public class MySaver : MonoBehaviour
     /// <summary>
     /// Our method for saving
     /// </summary>
-    public void MySave()
+    public IEnumerator MySave()
     {
+        yield return new WaitForSeconds(3);
         //basic
         YandexGame.savesData.CounterValue = Game.CounterValue;
         YandexGame.savesData.IncomePerSecond = Game.IncomePerSecond;
@@ -81,10 +83,19 @@ public class MySaver : MonoBehaviour
 
         //save
         YandexGame.SaveProgress();
+
+        myCoroutine = null;
     }
 
     private void Update()
     {
-        MySave();
+        if(myCoroutine != null)
+        {
+
+        }
+        else
+        {
+           myCoroutine = StartCoroutine(MySave());
+        }
     }
 }

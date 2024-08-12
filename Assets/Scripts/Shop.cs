@@ -16,7 +16,7 @@ public class Shop : MonoBehaviour
 
     private UpgradePrefab[] upgradePrefabList = new UpgradePrefab[16];
     public List<Upgrade> upgradeList { get; set; } = new List<Upgrade>(new Upgrade[16]);
-    private List<BigInteger> upgradeCosts = new List<BigInteger>{ 15, 40, 1500, 4750, 110000, (BigInteger)oneMillion,
+    private List<BigInteger> upgradeCosts = new List<BigInteger>{ 15, 100, 1500, 8000, 110000, (BigInteger)oneMillion,
         (BigInteger)tenMillion, (BigInteger)fifteenMillion, (BigInteger) sevenHundredMillion, (BigInteger) threeBillion,
         (BigInteger) fiftyBillion, (BigInteger) oneTrillion, (BigInteger) tenTrillion, (BigInteger) twoHundredFiftyTrillion,
         (BigInteger) twoQuadrillion, (BigInteger)fiveQuadrillion };
@@ -85,7 +85,7 @@ public class Shop : MonoBehaviour
 
                 upgradePrefabList[i].UpgradeBackgroundImage.color = new Color32(80, 130, 125, 255);
 
-                upgradePrefabList[i].upgradeCostText.text = "???";
+                upgradePrefabList[i].upgradeCostText.text = "?????";
                 upgradePrefabList[i].upgradeCostText.color = new Color(0, 0, 0, 1);
 
                 upgradePrefabList[i].upgradeNameText.text = "??????????";

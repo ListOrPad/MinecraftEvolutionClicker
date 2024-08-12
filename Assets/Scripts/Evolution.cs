@@ -14,15 +14,32 @@ public class Evolution : MonoBehaviour
     [HideInInspector] public int level;
     private GameObject creature;
 
+    private string currentLang;
+    private int currentLevel;
+    private int maxCreatureLvl;
+
     private void Start()
     {
+        maxCreatureLvl = creatureSprites.Length - 1;
         creature = GameObject.Find("Creature");
+
+        currentLang = YandexGame.lang;
+        currentLevel = level;
+        UpdateCreature();
+        WriteLvl();
     }
 
     private void Update()
     {
-        creature.GetComponent<Image>().sprite = creatureSprites[level];
-        WriteLvl();
+        if (currentLang != YandexGame.lang || currentLevel != level)
+        {
+            // update text and creature only if level or lang have changed
+            currentLang = YandexGame.lang;
+            currentLevel = level;
+            UpdateCreature();
+
+            WriteLvl();
+        }
     }
 
     public void CreatureClick()
@@ -43,11 +60,12 @@ public class Evolution : MonoBehaviour
 
         if (level < creatureSprites.Length) // Ensure we have a sprite for the next level
         {
-            creature.GetComponent<Image>().sprite = creatureSprites[level];
+            UpdateCreature();
         }
 
         SoundManager.Instance.PlaySound(lvlUpSound);
     }
+
     private bool LvlUp()
     {
         if (creatureSprites.Length > level)
@@ -62,16 +80,16 @@ public class Evolution : MonoBehaviour
     }
 
     /// <summary>
-    /// adds +20% to the exp bar as a reward for watching rewarding ad
+    /// Adds +20% to the exp bar as a reward for watching a rewarded ad
     /// </summary>
     public void AdRewardedExperience()
     {
-        //+20% exp of max value
+        // +20% exp of max value
         float rewardedExperience = expBar.maxValue / 100 * 20;
 
         float sum = expBar.value + rewardedExperience;
         float delta = sum - expBar.maxValue;
-       
+
         if (sum >= expBar.maxValue && creatureSprites.Length > level)
         {
             Evolve();
@@ -89,20 +107,40 @@ public class Evolution : MonoBehaviour
 
     private void WriteLvl()
     {
-        if (YandexGame.lang == "ru" && creatureSprites.Length > level)
+        if (level < maxCreatureLvl)
         {
-            levelText.text = $"{level + 1} уровень";
-        }
-        else if (YandexGame.lang == "en" && creatureSprites.Length > level)
-        {
-            levelText.text = $"{level + 1} level";
-        }
-        else if (creatureSprites.Length == level)
-        {
+            // if lvl lesser quantity of available sprites show lvl
             if (YandexGame.lang == "ru")
-                levelText.text = $"максимальный уровень";
-            else
-                levelText.text = $"max level";
+            {
+                levelText.text = $"{level + 1} уровень";
+            }
+            else if (YandexGame.lang == "en")
+            {
+                levelText.text = $"{level + 1} level";
+            }
+        }
+        else
+        {
+            // if max lvl reached, show corresponding message
+            if (YandexGame.lang == "ru")
+            {
+                levelText.text = "максимальный уровень";
+            }
+            else if (YandexGame.lang == "en")
+            {
+                levelText.text = "max level";
+            }
+        }
+    }
+    private void UpdateCreature()
+    {
+        if (level > maxCreatureLvl)
+        {
+            creature.GetComponent<Image>().sprite = creatureSprites[maxCreatureLvl];
+        }
+        else
+        {
+            creature.GetComponent<Image>().sprite = creatureSprites[level];
         }
     }
 }

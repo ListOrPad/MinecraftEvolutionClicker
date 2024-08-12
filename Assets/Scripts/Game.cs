@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using System.Numerics;
 using TMPro;
 using UnityEngine;
@@ -14,12 +12,17 @@ public class Game : MonoBehaviour
 
     [SerializeField] private GameObject fadingNumbersObject;
     [SerializeField] private GameObject spawnClickObject;
+
+    [SerializeField] private GameObject upgrades;
     private Transform fadeAwayText;
+    private string currentLang;
 
     public static BigInteger CounterValue { get; set; }
     public static BigInteger ClickPower;
     public static BigInteger IncomePerSecond;
     private float accumulatedTime = 0f;
+    private BigInteger previousCounterValue;
+    private BigInteger previousIncomePerSecond;
 
     private Evolution evolution;
     private NumberFormatter numberFormatter = new NumberFormatter();
@@ -35,12 +38,17 @@ public class Game : MonoBehaviour
 
     private void Start()
     {
-        //those two lines probably should be deleted, this text is handled in update
-        CounterText.text = "0 <sprite=0>";
-        IncomeText.text = "1 <sprite=0> в сек.";
+        StartPositionUpgrades();
+        currentLang = YandexGame.lang;
+
+        previousCounterValue = CounterValue;
+        previousIncomePerSecond = IncomePerSecond;
 
         evolution = GetComponent<Evolution>();
         fadeAwayText = GameObject.Find("FadeAwayText").GetComponent<Transform>();
+
+        UpdateTexts();
+        UpdateLanguageButton();
     }
     public void Click()
     {
@@ -80,10 +88,25 @@ public class Game : MonoBehaviour
             accumulatedTime -= (float)wholeNumbers;
         }
 
-        //text for counter
+        // Check if we need to update texts
+        if (CounterValue != previousCounterValue || IncomePerSecond != previousIncomePerSecond)
+        {
+            UpdateTexts();
+
+            // Update cached values
+            previousCounterValue = CounterValue;
+            previousIncomePerSecond = IncomePerSecond;
+        }
+
+    }
+
+    private void UpdateTexts()
+    {
+        // Update text for counter
         CounterText.text = $"{numberFormatter.FormatCounterNumber(CounterValue)} <sprite=0>";
-        //text for income per sec
-        if (YandexGame.lang == "ru")
+
+        // Update text for income per second
+        if (currentLang == "ru")
         {
             IncomeText.text = $"{numberFormatter.FormatNumber(IncomePerSecond)} <sprite=0> в сек.";
         }
@@ -91,16 +114,11 @@ public class Game : MonoBehaviour
         {
             IncomeText.text = $"{numberFormatter.FormatNumber(IncomePerSecond)} <sprite=0> per sec.";
         }
-
-        //if Language Button is pressed
-        ChangeLanguageButton();
     }
 
-    
-
-    private void ChangeLanguageButton()
+    private void UpdateLanguageButton()
     {
-        if(YandexGame.lang == "en")
+        if(currentLang == "en")
         {
             enLanguageButton.gameObject.SetActive(true);
             ruLanguageButton.gameObject.SetActive(false);
@@ -110,6 +128,26 @@ public class Game : MonoBehaviour
             ruLanguageButton.gameObject.SetActive(true);
             enLanguageButton.gameObject.SetActive(false);
         }
+    }
+
+    //on language button click
+    public void ChangeLanguageButton()
+    {
+        if (currentLang != YandexGame.lang)
+        {
+            currentLang = YandexGame.lang;
+            UpdateLanguageButton();
+            UpdateTexts();
+        }
+    }
+
+    private void StartPositionUpgrades()
+    {
+        RectTransform upgradesTransform;
+        upgradesTransform = upgrades.GetComponent<RectTransform>();
+        upgradesTransform.localPosition = new UnityEngine.Vector3(transform.position.x, -1547f, transform.position.z);
+        upgradesTransform.offsetMax = new UnityEngine.Vector2(-31f, upgradesTransform.offsetMax.y );
+        upgradesTransform.offsetMin = new UnityEngine.Vector2(60.8f, upgradesTransform.offsetMin.y );
     }
 
     #region rewarded ad
