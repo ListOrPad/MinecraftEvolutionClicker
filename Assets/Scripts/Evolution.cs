@@ -11,12 +11,13 @@ public class Evolution : MonoBehaviour
     [SerializeField] public Slider expBar;
     [SerializeField] private TMP_Text levelText;
     [SerializeField] public Sprite[] creatureSprites;
-    [HideInInspector] public int level;
+    public int level { get; set; }
+    public int maxCreatureLvl { get; set; }
+
     private GameObject creature;
 
     private string currentLang;
     private int currentLevel;
-    private int maxCreatureLvl;
 
     private void Start()
     {

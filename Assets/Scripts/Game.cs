@@ -17,7 +17,8 @@ public class Game : MonoBehaviour
     private Transform fadeAwayText;
     private string currentLang;
 
-    public static BigInteger CounterValue { get; set; }
+    public static int Prestige;
+    public static BigInteger CounterValue;
     public static BigInteger ClickPower;
     public static BigInteger IncomePerSecond;
     private float accumulatedTime = 0f;
@@ -36,11 +37,15 @@ public class Game : MonoBehaviour
     [SerializeField] private Button ruLanguageButton;
     [SerializeField] private Button enLanguageButton;
 
+    
+    
+
     private void Start()
     {
         StartPositionUpgrades();
         currentLang = YandexGame.lang;
 
+        Prestige = PlayerPrefs.GetInt("PrestigeLvl");
         previousCounterValue = CounterValue;
         previousIncomePerSecond = IncomePerSecond;
 

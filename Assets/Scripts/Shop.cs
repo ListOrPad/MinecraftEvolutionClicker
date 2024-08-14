@@ -4,12 +4,15 @@ using System.Numerics;
 using UnityEngine;
 using YG;
 using System.Linq;
+using UnityEngine.UI;
+
 public class Shop : MonoBehaviour
 {
     private NumberFormatter numberFormatter = new NumberFormatter();
     private YandexGame YG;
 
     [SerializeField]private GameObject resetButton;
+    private GameResetManager resetManager;
 
     [Header("Sound Stuff")]
     [SerializeField] private AudioClip buySuccessSound;
@@ -45,6 +48,7 @@ public class Shop : MonoBehaviour
     private void Start()
     {
         YG = GameObject.Find("YandexGame").GetComponent<YandexGame>();
+        resetManager = GameObject.Find("Game").GetComponent<GameResetManager>();
 
         InitializeUpgrades();
         SaveHiddenData();
@@ -53,6 +57,8 @@ public class Shop : MonoBehaviour
     {
         ConcealUpgrades();
         DimExpensiveUpgrades();
+        //if the last update was bought:
+        RevealResetButton();
     }
 
     private void InitializeUpgrades()
@@ -199,8 +205,6 @@ public class Shop : MonoBehaviour
             GetUpgrade(upgradeID).wasUpgradeBought = true;
             //play purchase sound
             SoundManager.Instance.PlaySound(buySuccessSound);
-            //if the last update was bought:
-            RevealResetButton();
         }
     }
 
@@ -209,6 +213,7 @@ public class Shop : MonoBehaviour
         if(upgradeList.Last().wasUpgradeBought)
         {
             resetButton.gameObject.SetActive(true);
+            resetButton.GetComponent<Button>().onClick.AddListener(() => resetManager.ResetEvolutionError());
         }
     }
 

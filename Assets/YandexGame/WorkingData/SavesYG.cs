@@ -16,6 +16,7 @@ namespace YG
         // Ваши сохранения
 
         //basic
+        public int previousRecord;
         public BigInteger CounterValue = 0;
         public BigInteger IncomePerSecond = 0;
         public BigInteger ClickPower = 1;

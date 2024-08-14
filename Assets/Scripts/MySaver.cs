@@ -2,16 +2,19 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Numerics;
 using UnityEngine;
+using UnityEngine.SocialPlatforms.Impl;
 using YG;
 
 public class MySaver : MonoBehaviour
 {
+    Leaderboard leaderboard;
     Evolution evolution;
     Shop shop;
     private Coroutine myCoroutine;
     // Подписываемся на событие GetDataEvent в OnEnable
     private void OnEnable()
     {
+        leaderboard = GameObject.Find("Game").GetComponent<Leaderboard>();
         evolution = GameObject.Find("Game").GetComponent<Evolution>();
         shop = GameObject.Find("Game").GetComponent<Shop>();
 
@@ -41,6 +44,12 @@ public class MySaver : MonoBehaviour
     public void GetLoad()
     {
         //basic
+        leaderboard.previousRecord = YandexGame.savesData.previousRecord;
+        if (leaderboard.previousRecord > Game.Prestige)
+        {
+            Game.Prestige = leaderboard.previousRecord;
+        }
+
         Game.CounterValue = YandexGame.savesData.CounterValue;
         Game.IncomePerSecond = YandexGame.savesData.IncomePerSecond;
         Game.ClickPower = YandexGame.savesData.ClickPower;
@@ -65,6 +74,8 @@ public class MySaver : MonoBehaviour
     {
         yield return new WaitForSeconds(3);
         //basic
+        YandexGame.savesData.previousRecord = leaderboard.previousRecord;
+
         YandexGame.savesData.CounterValue = Game.CounterValue;
         YandexGame.savesData.IncomePerSecond = Game.IncomePerSecond;
         YandexGame.savesData.ClickPower = Game.ClickPower;

@@ -1,36 +1,74 @@
-using System.Collections;
-using System.Collections.Generic;
-using System.Numerics;
+using TMPro;
 using UnityEngine;
 using YG;
+using UnityEngine.UI;
 
 public class Leaderboard : MonoBehaviour
 {
-    private BigInteger previousRecord;
-    private Coroutine myCoroutine;
+    [SerializeField] private TextMeshProUGUI prestigeText;
+    [SerializeField] private Button prestigeLbButton;
+    [SerializeField] private GameObject prestigeLeaderboard;
+    private bool eventSubscribed;
 
+    private LeaderboardYG leaderboardYG;
+
+    public int previousRecord { get; set; }
+
+    private void Start()
+    {
+        leaderboardYG = GameObject.Find("Prestige Leaderboard").GetComponent<LeaderboardYG>();
+        leaderboardYG.UpdateLB();
+
+        prestigeLbButton.onClick.AddListener(() => prestigeLeaderboard.SetActive(true));
+        eventSubscribed = true;
+    }
     private void Update()
     {
-        if (myCoroutine != null)
-        {
+        HideLeaderboard();
+        WritePrestigeText();
+        WriteNewRecord();
+    }
 
-        }
-        else
+
+    private void WriteNewRecord()
+    {
+        if(previousRecord < Game.Prestige)
         {
-            myCoroutine = StartCoroutine(WriteNewRecord());
+            previousRecord = Game.Prestige;
+
+            YandexGame.NewLeaderboardScores("prestigeLB", Game.Prestige);
+            leaderboardYG.NewScore(Game.Prestige);
+            leaderboardYG.UpdateLB();
         }
     }
 
-    private IEnumerator WriteNewRecord()
+    private void WritePrestigeText()
     {
-        yield return new WaitForSeconds(3);
-
-        if(previousRecord < Game.CounterValue)
+        if (YandexGame.lang == "ru")
         {
-            previousRecord = Game.CounterValue;
-
-            YandexGame.NewLeaderboardScores("diamondCount", (int)Game.CounterValue);
+            prestigeText.text = $"Уровень Престижа: {Game.Prestige}";
         }
-        myCoroutine = null;
+        else
+        {
+            prestigeText.text = $"Prestige Level: {Game.Prestige}";
+        }
+    }
+
+    private void HideLeaderboard()
+    {
+        //if prestige leaderboard is active we subscribe deactivate event on the button
+        if (prestigeLeaderboard.activeSelf == true && eventSubscribed)
+        {
+            prestigeLbButton.onClick.RemoveAllListeners();
+            prestigeLbButton.onClick.AddListener(() => prestigeLeaderboard.SetActive(false));
+            eventSubscribed = false;
+
+        }
+        if (prestigeLeaderboard.activeSelf == false && !eventSubscribed)
+        {
+            prestigeLbButton.onClick.RemoveAllListeners();
+            prestigeLbButton.onClick.AddListener(() => prestigeLeaderboard.SetActive(true));
+            eventSubscribed = true;
+        }
     }
 }

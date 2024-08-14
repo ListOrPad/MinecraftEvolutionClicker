@@ -1,2 +1,2 @@
 Build path: H:/Мой диск/изображения/Clicker Game/Build
-Build number: 13
+Build number: 14
