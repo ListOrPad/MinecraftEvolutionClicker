@@ -21,7 +21,7 @@ public class Shop : MonoBehaviour
     public List<Upgrade> upgradeList { get; set; } = new List<Upgrade>(new Upgrade[16]);
     private List<BigInteger> upgradeCosts = new List<BigInteger>{ 15, 100, 1500, 8000, 110000, (BigInteger)oneMillion,
         (BigInteger)tenMillion, (BigInteger)fifteenMillion, (BigInteger) sevenHundredMillion, (BigInteger) threeBillion,
-        (BigInteger) fiftyBillion, (BigInteger) oneTrillion, (BigInteger) tenTrillion, (BigInteger) twoHundredFiftyTrillion,
+        (BigInteger) fiftyBillion, (BigInteger) sixTrillion, (BigInteger) tenTrillion, (BigInteger) twoHundredFiftyTrillion,
         (BigInteger) twoQuadrillion, (BigInteger)fiveQuadrillion };
 
     //Prices of upgrades
@@ -31,7 +31,7 @@ public class Shop : MonoBehaviour
     private const double sevenHundredMillion = 700_000_000;
     private const double threeBillion = 3_000_000_000;
     private const double fiftyBillion = 50_000_000_000;
-    private const double oneTrillion = 1_000_000_000_000;
+    private const double sixTrillion = 6_000_000_000_000;
     private const double tenTrillion = 10_000_000_000_000;
     private const double twoHundredFiftyTrillion = 250_000_000_000_000;
     private const double twoQuadrillion = 2_000_000_000_000_000;

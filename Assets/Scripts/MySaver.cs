@@ -1,8 +1,5 @@
 using System.Collections;
-using System.Collections.Generic;
-using System.Numerics;
 using UnityEngine;
-using UnityEngine.SocialPlatforms.Impl;
 using YG;
 
 public class MySaver : MonoBehaviour
@@ -11,6 +8,7 @@ public class MySaver : MonoBehaviour
     Evolution evolution;
     Shop shop;
     private Coroutine myCoroutine;
+
     // Подписываемся на событие GetDataEvent в OnEnable
     private void OnEnable()
     {
@@ -72,7 +70,7 @@ public class MySaver : MonoBehaviour
     /// </summary>
     public IEnumerator MySave()
     {
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(10);
         //basic
         YandexGame.savesData.previousRecord = leaderboard.previousRecord;
 

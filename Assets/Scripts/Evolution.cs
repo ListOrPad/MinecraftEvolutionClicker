@@ -55,7 +55,7 @@ public class Evolution : MonoBehaviour
     private void Evolve()
     {
         expBar.value = 0;
-        expBar.maxValue += 100;
+        expBar.maxValue += 120;
 
         level += 1;
 

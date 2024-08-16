@@ -32,7 +32,7 @@ public class GameResetManager : MonoBehaviour
     }
     public void OnPrestigeButtonClicked()
     {
-        if (evolution.level == evolution.maxCreatureLvl)
+        if (evolution.level == evolution.maxCreatureLvl + 1)
         {
             Game.Prestige += 1;
             PlayerPrefs.SetInt("PrestigeLvl", Game.Prestige);

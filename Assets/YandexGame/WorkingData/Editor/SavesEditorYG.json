@@ -1,10 +1,10 @@
 {
-  "idSave": 40,
-  "isFirstSession": true,
+  "idSave": 32,
+  "isFirstSession": false,
   "language": "ru",
   "promptDone": false,
-  "previousRecord": 9,
-  "CounterValue": 21113507202048,
+  "previousRecord": 0,
+  "CounterValue": 0,
   "IncomePerSecond": 0,
   "ClickPower": 1,
   "level": 0,
@@ -34,7 +34,7 @@
       "idleUpgradeValue": 1,
       "clickUpgradeValue": 0,
       "isIdleUpgrade": true,
-      "wasUpgradeBought": false
+      "wasUpgradeBought": true
     },
     {
       "Cost": 100,
@@ -107,7 +107,7 @@
       "wasUpgradeBought": false
     },
     {
-      "Cost": 1000000000000,
+      "Cost": 6000000000000,
       "idleUpgradeValue": 0,
       "clickUpgradeValue": 1000000000,
       "isIdleUpgrade": false,

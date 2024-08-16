@@ -16,7 +16,7 @@ public class Leaderboard : MonoBehaviour
 
     private void Start()
     {
-        leaderboardYG = GameObject.Find("Prestige Leaderboard").GetComponent<LeaderboardYG>();
+        leaderboardYG = prestigeLeaderboard.GetComponent<LeaderboardYG>();
         leaderboardYG.UpdateLB();
 
         prestigeLbButton.onClick.AddListener(() => prestigeLeaderboard.SetActive(true));
