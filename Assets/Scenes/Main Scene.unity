@@ -3922,13 +3922,14 @@ GameObject:
   - component: {fileID: 627853340}
   - component: {fileID: 627853342}
   - component: {fileID: 627853341}
+  - component: {fileID: 627853343}
   m_Layer: 5
-  m_Name: BG GIF
+  m_Name: BG Ghast
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &627853340
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3945,8 +3946,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.47959554}
   m_AnchorMax: {x: 1, y: 0.713889}
-  m_AnchoredPosition: {x: 9.3203125, y: 6.687958}
-  m_SizeDelta: {x: 154.73438, y: 3.2329102}
+  m_AnchoredPosition: {x: -890, y: 66.34122}
+  m_SizeDelta: {x: -1786.6, y: -116.0736}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &627853341
 MonoBehaviour:
@@ -3961,14 +3962,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.32157716, g: 0.24136703, b: 0.4528302, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 49da10371d098e64da207a1c0a540ff0, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -3986,6 +3987,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 627853339}
   m_CullTransparentMesh: 1
+--- !u!114 &627853343
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 627853339}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 774001cdcee435c45b6800543f9052c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 50
 --- !u!1 &630824462
 GameObject:
   m_ObjectHideFlags: 0
@@ -5767,7 +5781,10 @@ MonoBehaviour:
   - {fileID: 21300000, guid: d42093fd529be054292e6c20bb9cf414, type: 3}
   - {fileID: 21300000, guid: d77e9f77a8c319f46b7fee5d775e7ba9, type: 3}
   - {fileID: 21300000, guid: af3abcc5f2f97c54899229c03fb66d8c, type: 3}
+  - {fileID: 21300000, guid: 38d567af272f9de4bace451b4ae8b8d2, type: 3}
   - {fileID: 21300000, guid: a3b1bfbe3d2fb1441870c2ad991b8fea, type: 3}
+  - {fileID: 21300000, guid: b2cb4ca8836f2dd458fc8c3a490e4d5b, type: 3}
+  - {fileID: 21300000, guid: f5fd8cc8bf2f297499e64d7f9f03e434, type: 3}
 --- !u!114 &881150892
 MonoBehaviour:
   m_ObjectHideFlags: 0
