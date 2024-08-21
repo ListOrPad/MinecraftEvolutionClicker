@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Numerics;
 using TMPro;
 using UnityEngine;
+using YG;
 
 public class Bonus : MonoBehaviour
 {
@@ -134,7 +135,13 @@ public class Bonus : MonoBehaviour
             bonus = Game.IncomePerSecond * 25;
             Game.CounterValue += bonus;
         }
-        bonusText.text = $"BONUS +{formater.FormatNumber(bonus)} <sprite=0>";
-        Debug.Log("Check");
+        if (YandexGame.lang == "en")
+        {
+            bonusText.text = $"BONUS +{formater.FormatNumber(bonus)} <sprite=0>";
+        }
+        else
+        {
+            bonusText.text = $"анмся +{formater.FormatNumber(bonus)} <sprite=0>";
+        }
     }
 }
