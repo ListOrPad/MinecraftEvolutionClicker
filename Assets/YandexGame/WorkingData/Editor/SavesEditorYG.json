@@ -1,32 +1,32 @@
 {
-  "idSave": 150,
+  "idSave": 604,
   "isFirstSession": false,
   "language": "ru",
   "promptDone": false,
   "previousRecord": 12,
-  "CounterValue": 1048,
-  "IncomePerSecond": 18,
-  "ClickPower": 3,
-  "level": 1,
-  "expBarValue": 76.0,
-  "expBarMaxValue": 220.0,
+  "CounterValue": 14757381171353771861522,
+  "IncomePerSecond": 10310695227026,
+  "ClickPower": 1001001050053,
+  "level": 2,
+  "expBarValue": 21.0,
+  "expBarMaxValue": 340.0,
   "upgradeBought": [
     true,
     true,
-    false,
-    false,
-    false,
-    false,
-    false,
-    false,
-    false,
-    false,
-    false,
-    false,
-    false,
-    false,
-    false,
-    false
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true
   ],
   "upgrades": [
     {
@@ -48,6 +48,230 @@
       "idleUpgradeValue": 25,
       "clickUpgradeValue": 0,
       "isIdleUpgrade": true,
+      "wasUpgradeBought": true
+    },
+    {
+      "Cost": 8000,
+      "idleUpgradeValue": 0,
+      "clickUpgradeValue": 50,
+      "isIdleUpgrade": false,
+      "wasUpgradeBought": true
+    },
+    {
+      "Cost": 110000,
+      "idleUpgradeValue": 2000,
+      "clickUpgradeValue": 0,
+      "isIdleUpgrade": true,
+      "wasUpgradeBought": true
+    },
+    {
+      "Cost": 1000000,
+      "idleUpgradeValue": 25000,
+      "clickUpgradeValue": 0,
+      "isIdleUpgrade": true,
+      "wasUpgradeBought": true
+    },
+    {
+      "Cost": 10000000,
+      "idleUpgradeValue": 0,
+      "clickUpgradeValue": 50000,
+      "isIdleUpgrade": false,
+      "wasUpgradeBought": true
+    },
+    {
+      "Cost": 15000000,
+      "idleUpgradeValue": 200000,
+      "clickUpgradeValue": 0,
+      "isIdleUpgrade": true,
+      "wasUpgradeBought": true
+    },
+    {
+      "Cost": 700000000,
+      "idleUpgradeValue": 0,
+      "clickUpgradeValue": 1000000,
+      "isIdleUpgrade": false,
+      "wasUpgradeBought": true
+    },
+    {
+      "Cost": 3000000000,
+      "idleUpgradeValue": 45000000,
+      "clickUpgradeValue": 0,
+      "isIdleUpgrade": true,
+      "wasUpgradeBought": true
+    },
+    {
+      "Cost": 50000000000,
+      "idleUpgradeValue": 650000000,
+      "clickUpgradeValue": 0,
+      "isIdleUpgrade": true,
+      "wasUpgradeBought": true
+    },
+    {
+      "Cost": 6000000000000,
+      "idleUpgradeValue": 0,
+      "clickUpgradeValue": 1000000000,
+      "isIdleUpgrade": false,
+      "wasUpgradeBought": true
+    },
+    {
+      "Cost": 10000000000000,
+      "idleUpgradeValue": 10000000000,
+      "clickUpgradeValue": 0,
+      "isIdleUpgrade": true,
+      "wasUpgradeBought": true
+    },
+    {
+      "Cost": 250000000000000,
+      "idleUpgradeValue": 300000000000,
+      "clickUpgradeValue": 0,
+      "isIdleUpgrade": true,
+      "wasUpgradeBought": true
+    },
+    {
+      "Cost": 2000000000000000,
+      "idleUpgradeValue": 0,
+      "clickUpgradeValue": 1000000000000,
+      "isIdleUpgrade": false,
+      "wasUpgradeBought": true
+    },
+    {
+      "Cost": 5000000000000000,
+      "idleUpgradeValue": 10000000000000,
+      "clickUpgradeValue": 0,
+      "isIdleUpgrade": true,
+      "wasUpgradeBought": true
+    },
+    {
+      "Cost": 15,
+      "idleUpgradeValue": 1,
+      "clickUpgradeValue": 0,
+      "isIdleUpgrade": true,
+      "wasUpgradeBought": true
+    },
+    {
+      "Cost": 100,
+      "idleUpgradeValue": 0,
+      "clickUpgradeValue": 2,
+      "isIdleUpgrade": false,
+      "wasUpgradeBought": true
+    },
+    {
+      "Cost": 1500,
+      "idleUpgradeValue": 25,
+      "clickUpgradeValue": 0,
+      "isIdleUpgrade": true,
+      "wasUpgradeBought": false
+    },
+    {
+      "Cost": 8000,
+      "idleUpgradeValue": 0,
+      "clickUpgradeValue": 50,
+      "isIdleUpgrade": false,
+      "wasUpgradeBought": false
+    },
+    {
+      "Cost": 110000,
+      "idleUpgradeValue": 2000,
+      "clickUpgradeValue": 0,
+      "isIdleUpgrade": true,
+      "wasUpgradeBought": false
+    },
+    {
+      "Cost": 1000000,
+      "idleUpgradeValue": 25000,
+      "clickUpgradeValue": 0,
+      "isIdleUpgrade": true,
+      "wasUpgradeBought": false
+    },
+    {
+      "Cost": 10000000,
+      "idleUpgradeValue": 0,
+      "clickUpgradeValue": 50000,
+      "isIdleUpgrade": false,
+      "wasUpgradeBought": false
+    },
+    {
+      "Cost": 15000000,
+      "idleUpgradeValue": 200000,
+      "clickUpgradeValue": 0,
+      "isIdleUpgrade": true,
+      "wasUpgradeBought": false
+    },
+    {
+      "Cost": 700000000,
+      "idleUpgradeValue": 0,
+      "clickUpgradeValue": 1000000,
+      "isIdleUpgrade": false,
+      "wasUpgradeBought": false
+    },
+    {
+      "Cost": 3000000000,
+      "idleUpgradeValue": 45000000,
+      "clickUpgradeValue": 0,
+      "isIdleUpgrade": true,
+      "wasUpgradeBought": false
+    },
+    {
+      "Cost": 50000000000,
+      "idleUpgradeValue": 650000000,
+      "clickUpgradeValue": 0,
+      "isIdleUpgrade": true,
+      "wasUpgradeBought": false
+    },
+    {
+      "Cost": 6000000000000,
+      "idleUpgradeValue": 0,
+      "clickUpgradeValue": 1000000000,
+      "isIdleUpgrade": false,
+      "wasUpgradeBought": false
+    },
+    {
+      "Cost": 10000000000000,
+      "idleUpgradeValue": 10000000000,
+      "clickUpgradeValue": 0,
+      "isIdleUpgrade": true,
+      "wasUpgradeBought": false
+    },
+    {
+      "Cost": 250000000000000,
+      "idleUpgradeValue": 300000000000,
+      "clickUpgradeValue": 0,
+      "isIdleUpgrade": true,
+      "wasUpgradeBought": false
+    },
+    {
+      "Cost": 2000000000000000,
+      "idleUpgradeValue": 0,
+      "clickUpgradeValue": 1000000000000,
+      "isIdleUpgrade": false,
+      "wasUpgradeBought": false
+    },
+    {
+      "Cost": 5000000000000000,
+      "idleUpgradeValue": 10000000000000,
+      "clickUpgradeValue": 0,
+      "isIdleUpgrade": true,
+      "wasUpgradeBought": false
+    },
+    {
+      "Cost": 15,
+      "idleUpgradeValue": 1,
+      "clickUpgradeValue": 0,
+      "isIdleUpgrade": true,
+      "wasUpgradeBought": true
+    },
+    {
+      "Cost": 100,
+      "idleUpgradeValue": 0,
+      "clickUpgradeValue": 2,
+      "isIdleUpgrade": false,
+      "wasUpgradeBought": true
+    },
+    {
+      "Cost": 1500,
+      "idleUpgradeValue": 25,
+      "clickUpgradeValue": 0,
+      "isIdleUpgrade": true,
       "wasUpgradeBought": false
     },
     {
@@ -377,7 +601,119 @@
       "idleUpgradeValue": 0,
       "clickUpgradeValue": 2,
       "isIdleUpgrade": false,
+      "wasUpgradeBought": true
+    },
+    {
+      "Cost": 1500,
+      "idleUpgradeValue": 25,
+      "clickUpgradeValue": 0,
+      "isIdleUpgrade": true,
       "wasUpgradeBought": false
+    },
+    {
+      "Cost": 8000,
+      "idleUpgradeValue": 0,
+      "clickUpgradeValue": 50,
+      "isIdleUpgrade": false,
+      "wasUpgradeBought": false
+    },
+    {
+      "Cost": 110000,
+      "idleUpgradeValue": 2000,
+      "clickUpgradeValue": 0,
+      "isIdleUpgrade": true,
+      "wasUpgradeBought": false
+    },
+    {
+      "Cost": 1000000,
+      "idleUpgradeValue": 25000,
+      "clickUpgradeValue": 0,
+      "isIdleUpgrade": true,
+      "wasUpgradeBought": false
+    },
+    {
+      "Cost": 10000000,
+      "idleUpgradeValue": 0,
+      "clickUpgradeValue": 50000,
+      "isIdleUpgrade": false,
+      "wasUpgradeBought": false
+    },
+    {
+      "Cost": 15000000,
+      "idleUpgradeValue": 200000,
+      "clickUpgradeValue": 0,
+      "isIdleUpgrade": true,
+      "wasUpgradeBought": false
+    },
+    {
+      "Cost": 700000000,
+      "idleUpgradeValue": 0,
+      "clickUpgradeValue": 1000000,
+      "isIdleUpgrade": false,
+      "wasUpgradeBought": false
+    },
+    {
+      "Cost": 3000000000,
+      "idleUpgradeValue": 45000000,
+      "clickUpgradeValue": 0,
+      "isIdleUpgrade": true,
+      "wasUpgradeBought": false
+    },
+    {
+      "Cost": 50000000000,
+      "idleUpgradeValue": 650000000,
+      "clickUpgradeValue": 0,
+      "isIdleUpgrade": true,
+      "wasUpgradeBought": false
+    },
+    {
+      "Cost": 6000000000000,
+      "idleUpgradeValue": 0,
+      "clickUpgradeValue": 1000000000,
+      "isIdleUpgrade": false,
+      "wasUpgradeBought": false
+    },
+    {
+      "Cost": 10000000000000,
+      "idleUpgradeValue": 10000000000,
+      "clickUpgradeValue": 0,
+      "isIdleUpgrade": true,
+      "wasUpgradeBought": false
+    },
+    {
+      "Cost": 250000000000000,
+      "idleUpgradeValue": 300000000000,
+      "clickUpgradeValue": 0,
+      "isIdleUpgrade": true,
+      "wasUpgradeBought": false
+    },
+    {
+      "Cost": 2000000000000000,
+      "idleUpgradeValue": 0,
+      "clickUpgradeValue": 1000000000000,
+      "isIdleUpgrade": false,
+      "wasUpgradeBought": false
+    },
+    {
+      "Cost": 5000000000000000,
+      "idleUpgradeValue": 10000000000000,
+      "clickUpgradeValue": 0,
+      "isIdleUpgrade": true,
+      "wasUpgradeBought": false
+    },
+    {
+      "Cost": 15,
+      "idleUpgradeValue": 1,
+      "clickUpgradeValue": 0,
+      "isIdleUpgrade": true,
+      "wasUpgradeBought": true
+    },
+    {
+      "Cost": 100,
+      "idleUpgradeValue": 0,
+      "clickUpgradeValue": 2,
+      "isIdleUpgrade": false,
+      "wasUpgradeBought": true
     },
     {
       "Cost": 1500,
